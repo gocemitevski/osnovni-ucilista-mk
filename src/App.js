@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
 import Index from './components/Index';
 import School from './components/School';
 import ReactGA from 'react-ga';
-import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
 
@@ -18,11 +17,9 @@ function App() {
 
   // TODO:
   // врски за споделување по социјални мрежи
-  // политика на приватност
-  // README.md
   // содржина за „За изработката“
   // анимации на елементи
-  // најчести имиња (подобрување, не е побарвуање)
+  // најчести имиња (подобрување, не е побарување)
 
   const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
   const skopjeTitle = "Град Скопје";
@@ -44,12 +41,6 @@ function App() {
       "path": "/za-izrabotkata",
       "title": "За изработката",
       "component": About,
-      "exact": false
-    },
-    {
-      "path": "/politika-za-privatnost",
-      "title": "Политика за приватност",
-      "component": PrivacyPolicy,
       "exact": false
     }
   ];
@@ -130,9 +121,6 @@ function App() {
             <li className="nav-item d-flex flex-wrap align-items-center">
               <span>Извор на основни податоци:</span>
               <a className="nav-link" target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/politika-za-privatnost">Политика за приватност</Link>
             </li>
             <li className="nav-item ml-auto flex-wrap d-flex align-items-center">
               Изработка на компјутерска презентација: <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
