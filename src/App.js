@@ -8,6 +8,7 @@ import About from './components/About';
 import Index from './components/Index';
 import School from './components/School';
 import ReactGA from 'react-ga';
+import NotFound from './components/NotFound';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
   // најчести имиња (подобрување, не е побарување)
 
   const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
+
   const skopjeTitle = "Град Скопје";
 
   const routes = [
@@ -112,8 +114,9 @@ function App() {
         <div className="main-bg-wrap d-flex flex-column flex-fill">
           <Switch>
             {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} setTitle={setTitle} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
-            <Route exact strict path={`/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
-            <Route path={`/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
+            <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
+            <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
+            <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setTitle={setTitle} />} />
           </Switch>
         </div>
         <nav className="navbar navbar-footer text-muted">
