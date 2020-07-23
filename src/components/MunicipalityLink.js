@@ -6,7 +6,7 @@ const MunicipalityLink = (props) => {
 
   return (
     props.municipality.length > 0 && <Link className={props.className} onClick={() => { props.setScroll && props.setScroll(props.scroll) }} to={`/${encodeURIComponent(cleanName(transliterate(props.municipality)).toLowerCase())}/`}>{props.municipality}
-      {props.schoolCount && <span class="badge badge-primary badge-pill">{props.schoolCount}</span>}
+      {props.schoolCount && <span className="badge badge-primary badge-pill">{props.schoolCount}</span>}
     </Link>
   );
 }
