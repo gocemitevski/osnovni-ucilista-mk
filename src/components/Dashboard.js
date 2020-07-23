@@ -8,6 +8,7 @@ import SchoolItem from './SchoolItem';
 import SelectMunicipality from './SelectMunicipality';
 import { cleanName, transliterate, pageTitle, singularPlural } from '../utils';
 import MunicipalityLink from './MunicipalityLink';
+import OneSchool from './OneSchool';
 
 const Dashboard = (props) => {
 
@@ -98,7 +99,7 @@ const Dashboard = (props) => {
                 <strong className="mr-2">
                   {municipalitySchools.length}
                 </strong>
-                <small>{singularPlural(municipalitySchools.length, "училиште", "училишта")}</small>
+                <small>{singularPlural(municipalitySchools.length, "основно училиште", "основни училишта")}</small>
               </div>
             </div>
           </div>
@@ -124,6 +125,7 @@ const Dashboard = (props) => {
             </div>
           }
         </div>
+        {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3"><OneSchool key={key} {...props} className="card-one-school" data={school} /></div>)}
       </div>
     </main>
   );
