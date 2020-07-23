@@ -82,3 +82,11 @@ main {
     margin-bottom: $spacer*1.5;
   }
 }
+
+.card-one-school {
+  .card-body {
+    a {
+      color: inherit;
+    }
+  }
+}
