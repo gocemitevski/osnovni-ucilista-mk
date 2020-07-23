@@ -20,16 +20,16 @@ const School = (props) => {
   });
 
   const [nearbySchools, setNearbySchools] = useState(() => {
-    const nearbySchoolResults = props.data.filter(el => el.some(item => item.toString().toLowerCase().includes(school[2].toLowerCase())));
+    const nearbySchoolResults = props.data.filter(el => el.some(item => school && item.toString().toLowerCase().includes(school[2].toLowerCase())));
     return nearbySchoolResults;
   });
 
   const [position, setPosition] = useState(() => {
-    return school[6] ? school[6] : null;
+    return school && school[6] ? school[6] : null;
   });
 
   const [zoom, setZoom] = useState(() => {
-    return school[6] ? 17 : 9;
+    return school && school[6] ? 17 : 9;
   });
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const School = (props) => {
               {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} /></li>)}
             </ul>
           </div>
-        </div> : <OneSchool data={school} />}
+        </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
     </main>
   );
 }
