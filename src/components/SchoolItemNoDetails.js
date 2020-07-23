@@ -10,7 +10,7 @@ const SchoolItemNoDetails = (props) => {
   }, [props]);
 
   return (
-    <Link onClick={() => { props.setScroll(props.scroll); props.setSchool(props.data); props.setPosition(props.data[6]) }} to={`/${encodeURIComponent(cleanName(transliterate(props.data[3] + ' ' + props.data[2])).toLowerCase())}`}>
+    <Link onClick={() => { props.setScroll(props.scroll); props.setSchool(props.data); props.setPosition(props.data[6]) }} to={`/uchilishte/${encodeURIComponent(cleanName(transliterate(props.data[3] + ' ' + props.data[2])).toLowerCase())}`}>
       <article key={props.index}>
         <div className="d-flex align-items-center">
           <i className="text-muted fa fa-chalkboard-teacher mx-2"></i>

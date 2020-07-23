@@ -12,7 +12,7 @@ const SelectMunicipality = (props) => {
           props.setMunicipalitySchools && props.setMunicipalitySchools(props.data.filter(el =>
             (cleanName(transliterate(el[2].toString().toLowerCase())) === e.target.value) || (el[7] && cleanName(transliterate(el[7].toString().toLowerCase())) === e.target.value)
           ));
-          props.history.push('/' + e.target.value + '/');
+          props.history.push('/opshtina/' + e.target.value + '/');
         }
         else { props.history.push('') };
       }}>
