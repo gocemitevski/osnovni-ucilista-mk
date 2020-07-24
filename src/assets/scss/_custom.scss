@@ -55,8 +55,32 @@ main {
 }
 
 .results {
-  max-height: 79.25vh;
-  overflow: auto;
+  @include media-breakpoint-up(lg) {
+    max-height: 79.25vh;
+    overflow: auto;
+    // mask-image: linear-gradient(rgba(233, 236, 239, 1) 88%, rgba(233, 236, 239, 0) 98%);
+  }
+
+  .card {
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+  }
+
+  @include media-breakpoint-down(lg) {
+    .card {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.btn-truncate {
+  @extend .text-truncate;
+
+  span {
+    max-width: 100%;
+  }
 }
 
 .page {
