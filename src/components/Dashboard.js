@@ -104,11 +104,11 @@ const Dashboard = (props) => {
             </div>
           </div>
         </div>
-        <div className="p-3 flex-fill results">
+        <div className="px-3 flex-fill results">
           {(municipalityId && municipalitySchools.length > 0) && municipalitySchools.map((school, key) => <SchoolItem key={key} setScroll={props.setScroll(props.scroll)} data={school} />)}
           {
             !municipalityId &&
-            <div className="card-group mb-3">
+            <div className="card-group">
               <div className="card">
                 <div className="card-header">Општини со најмногу основни училишта</div>
                 <div className="list-group list-group-flush border-top-0">
