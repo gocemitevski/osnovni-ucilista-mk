@@ -111,19 +111,21 @@ const Dashboard = (props) => {
       <div className="col-lg-6 d-flex flex-column">
         <div className="bg-neutral p-3">
           <div className="row no-gutters">
-            <div className="col-lg-6">
-              <div className="mr-lg-3 mb-3 mb-lg-auto">
+            <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>
+              <div className="mb-3 mb-lg-auto">
                 <SelectMunicipality {...props} setMunicipalitySchools={setMunicipalitySchools} setSelectedMunicipality={setSelectedMunicipality} municipalities={props.municipalitiesSort} />
               </div>
             </div>
-            <div className="col-lg-6 d-flex flex-column">
-              <div className="d-flex px-3 py-2 align-items-center bg-muted text-light rounded h-100">
-                <strong className="mr-2">
-                  {municipalitySchools.length}
-                </strong>
-                <small>{singularPlural(municipalitySchools.length, "основно училиште", "основни училишта")}</small>
+            {municipalityId &&
+              <div className="col-lg-6 d-flex flex-column">
+                <div className="d-flex ml-lg-3 px-3 py-2 align-items-center bg-muted text-light rounded h-100">
+                  <strong className="mr-2">
+                    {municipalitySchools.length}
+                  </strong>
+                  <small>{singularPlural(municipalitySchools.length, "основно училиште", "основни училишта")}</small>
+                </div>
               </div>
-            </div>
+            }
           </div>
         </div>
         <div className="px-3 flex-fill results">
