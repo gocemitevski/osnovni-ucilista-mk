@@ -73,7 +73,7 @@ main {
       font-weight: $font-weight-bold;
       line-height: $headings-line-height;
       .text-uppercase {
-        flex: 0 1 60%;
+        flex: 0 1 65%;
       }
     }
 
@@ -91,7 +91,7 @@ main {
       padding: $spacer/2;
       margin-top: $spacer/2;
       margin-bottom: $spacer/2;
-      flex: 1 0 10%;
+      flex: 1 0 20%;
       text-align: center;
     }
   }
