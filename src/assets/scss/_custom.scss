@@ -55,6 +55,8 @@ main {
 }
 
 .results {
+  padding-top: $spacer;
+
   @include media-breakpoint-up(lg) {
     max-height: 79.25vh;
     overflow: auto;
@@ -62,28 +64,45 @@ main {
   }
 
   .card-group {
-    .card-header {
+
+    .card-header,
+    .card-body {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      flex-wrap: wrap;
       font-weight: $font-weight-bold;
-      padding: $spacer*1.5;
       line-height: $headings-line-height;
+      .text-uppercase {
+        flex: 0 1 60%;
+      }
+    }
+
+    .card-header {
+      padding: $spacer*1.5;
+    }
+
+    .value {
+      @extend .display-4;
+      @extend .rounded-pill;
+      @extend .bg-info;
+      color: $white;
+      font-weight: $font-weight-bold;
+      margin-right: $spacer*1.25;
+      padding: $spacer/2;
+      margin-top: $spacer/2;
+      margin-bottom: $spacer/2;
+      flex: 1 0 10%;
+      text-align: center;
     }
   }
 
   .card {
-    margin-top: $spacer;
     margin-bottom: $spacer;
   }
+}
 
-  @include media-breakpoint-down(lg) {
-    .card {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+.school {
+  margin-bottom: $spacer;
 }
 
 .btn-truncate {
