@@ -4,7 +4,7 @@ import SchoolItemLink from './SchoolItemLink';
 const Mail = (props) => {
 
   return (
-    <a className="nav-link my-1 mr-sm-2 px-3 py-2 btn-sm btn-success btn-truncate" title={props.props} href={`mailto:${props.props}`}>
+    <a className="nav-link my-1 mr-sm-2 btn-sm btn-success btn-truncate" title={props.props} href={`mailto:${props.props}`}>
       <i className="fa fa-fw fa-envelope mr-2"></i>
       <span>{props.props}</span>
     </a>
