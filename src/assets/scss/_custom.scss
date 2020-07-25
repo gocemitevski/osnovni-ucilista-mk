@@ -82,10 +82,10 @@ main {
     }
 
     .value {
-      @extend .display-4;
       @extend .rounded-pill;
       @extend .bg-info;
       color: $white;
+      font-size: $h3-font-size;
       font-weight: $font-weight-bold;
       margin-right: $spacer*1.25;
       padding: $spacer/2;
