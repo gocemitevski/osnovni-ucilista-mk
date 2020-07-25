@@ -110,14 +110,20 @@ const Dashboard = (props) => {
             !municipalityId &&
             <div className="card-group">
               <div className="card">
-                <div className="card-header">Општини со најмногу основни училишта</div>
+                <div className="card-header text-muted">
+                  <i className="fa-3x fas fa-sort-amount-up mt-2 mb-3"></i>
+                  <span role="heading" className="text-center text-uppercase px-5">Општини со најмногу основни училишта</span>
+                </div>
                 <div className="list-group list-group-flush border-top-0">
                   <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" {...props} municipality={props.skopjeTitle} schoolCount={props.skopjeSchoolsCount} />
                   {Object.values(mostSchools.map((municipality, index) => municipality[1] >= 8 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />)).reverse()}
                 </div>
               </div>
               <div className="card ml-3">
-                <div className="card-header">Општини со најмалку основни училишта</div>
+                <div className="card-header text-muted">
+                  <i className="fa-3x fas fa-sort-amount-down mt-2 mb-3"></i>
+                  <span role="heading" className="text-center text-uppercase px-5">Општини со најмалку основни училишта</span>
+                </div>
                 <div className="list-group list-group-flush border-top-0">
                   {Object.values(mostSchools.map((municipality, index) => municipality[1] === 1 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />))}
                 </div>
