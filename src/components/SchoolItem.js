@@ -16,7 +16,7 @@ const SchoolItem = (props) => {
   const emails = props.data[5].split(/[\s|,|;]/);
 
   return (
-    <article className="card" key={props.index}>
+    <article className="card school" key={props.index}>
       <div className="row no-gutters">
         <div className="col-lg-6 p-4 d-flex">
           <h2 className="h5 mb-0 flex-fill">
