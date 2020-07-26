@@ -33,7 +33,7 @@ const Index = (props) => {
   }, [props]);
 
   return (
-    <div className="main-bg">
+    <div className="main-bg flex-fill">
       <main className="container py-5">
         <div className="form-group">
           <label htmlFor="schoolSearch" className="sr-only">Барајте училиште</label>
