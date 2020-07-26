@@ -94,8 +94,8 @@ const Dashboard = (props) => {
   });
 
   return (
-    <main className="row no-gutters flex-fill flex-shrink-1">
-      <div className="col-lg-6 bg-info d-flex flex-column">
+    <main className="row no-gutters main-bg main-bg-wrap">
+      <div className="col-lg-6 bg-info d-flex flex-column h-100">
         <Map scrollWheelZoom={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -108,11 +108,11 @@ const Dashboard = (props) => {
           })}
         </Map>
       </div>
-      <div className="col-lg-6 d-flex flex-column">
+      <div className="col-lg-6 d-flex flex-column h-100">
         <div className="bg-neutral p-3">
           <div className="row no-gutters">
             <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>
-              <div className="mb-3 mb-lg-auto">
+              <div className={municipalityId ? `mb-3 mb-lg-auto` : ``}>
                 <SelectMunicipality {...props} setMunicipalitySchools={setMunicipalitySchools} setSelectedMunicipality={setSelectedMunicipality} municipalities={props.municipalitiesSort} />
               </div>
             </div>
