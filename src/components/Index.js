@@ -33,7 +33,7 @@ const Index = (props) => {
   }, [props]);
 
   return (
-    <React.Fragment>
+    <div className="main-bg">
       <main className="container py-5">
         <div className="form-group">
           <label htmlFor="schoolSearch" className="sr-only">Барајте училиште</label>
@@ -42,7 +42,7 @@ const Index = (props) => {
         </div>
         {state.data.length > 0 ? state.data.map((school, key) => <SchoolItem key={key} setScroll={props.setScroll(props.scroll)} data={school} />) : <NoResults />}
       </main>
-    </React.Fragment>
+    </div>
   );
 }
 
