@@ -109,28 +109,24 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-        <NavBar routes={routes} data={data.records} />
-        <div className="main-bg-wrap d-flex flex-column flex-fill">
-          <Switch>
-            {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} setTitle={setTitle} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
-            <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
-            <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
-            <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setTitle={setTitle} />} />
-          </Switch>
-        </div>
-        <nav className="navbar navbar-footer text-muted">
-          <ul className="nav flex-fill mb-0">
-            <li className="nav-item d-flex flex-wrap align-items-center">
-              <span>Извор на основни податоци:</span>
-              <a className="nav-link" target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
-            </li>
-            <li className="nav-item ml-auto flex-wrap d-flex align-items-center">
-              Изработка на компјутерска презентација: <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <NavBar routes={routes} data={data.records} />
+      <Switch>
+        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} setTitle={setTitle} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
+        <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
+        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
+        <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setTitle={setTitle} />} />
+      </Switch>
+      <nav className="navbar navbar-footer text-muted">
+        <ul className="nav flex-fill mb-0">
+          <li className="nav-item d-flex flex-wrap align-items-center">
+            <span>Извор на основни податоци:</span>
+            <a className="nav-link" target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
+          </li>
+          <li className="nav-item ml-auto flex-wrap d-flex align-items-center">
+            Изработка на компјутерска презентација: <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
+          </li>
+        </ul>
+      </nav>
     </Router>
   );
 }
