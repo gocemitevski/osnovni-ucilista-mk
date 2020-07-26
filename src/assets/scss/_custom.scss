@@ -99,7 +99,6 @@ main {
 
     .value {
       @extend .rounded-pill;
-      @extend .bg-info;
       color: $white;
       font-size: $h3-font-size;
       font-weight: $font-weight-bold;
