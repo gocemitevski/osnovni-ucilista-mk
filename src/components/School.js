@@ -61,19 +61,21 @@ const School = (props) => {
   });
 
   return (
-    <main className="container py-5">
-      <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} />
-      {nearbySchools.length > 1 ?
-        <div className="row justify-content-center">
-          <div className="col-xl-8">
-            <h2 className="mt-5 mb-4 h4 text-center">Други училишта во <MunicipalityLink {...props} municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink {...props} municipality={school[7]} />}
-            </h2>
-            <ul className="list-group">
-              {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} /></li>)}
-            </ul>
-          </div>
-        </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
-    </main>
+    <div className="main-bg">
+      <main className="container py-5">
+        <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} />
+        {nearbySchools.length > 1 ?
+          <div className="row justify-content-center">
+            <div className="col-xl-8">
+              <h2 className="mt-5 mb-4 h4 text-center">Други училишта во <MunicipalityLink {...props} municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink {...props} municipality={school[7]} />}
+              </h2>
+              <ul className="list-group">
+                {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} /></li>)}
+              </ul>
+            </div>
+          </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
+      </main>
+    </div>
   );
 }
 
