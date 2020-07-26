@@ -112,7 +112,7 @@ const Dashboard = (props) => {
         <div className="bg-neutral p-3">
           <div className="row no-gutters">
             <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>
-              <div className={municipalityId ? `mb-3 mb-lg-auto` : ``}>
+              <div className={municipalityId && `mb-3 mb-lg-auto`}>
                 <SelectMunicipality {...props} setMunicipalitySchools={setMunicipalitySchools} setSelectedMunicipality={setSelectedMunicipality} municipalities={props.municipalitiesSort} />
               </div>
             </div>
