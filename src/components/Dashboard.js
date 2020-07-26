@@ -136,13 +136,13 @@ const Dashboard = (props) => {
               <div className="card-group">
                 <div className="card">
                   <div className="card-body text-muted">
-                    <span className="value">{municipalitySchools.length}</span>
+                    <span className="value bg-success">{municipalitySchools.length}</span>
                     <span role="heading" className="text-uppercase">основни училишта во сите општини во Р. С. Македонија</span>
                   </div>
                 </div>
                 <div className="card ml-sm-3">
                   <div className="card-body text-muted">
-                    <span className="value">{Math.round(municipalitySchools.length / (props.municipalitiesSort.length + 1))}</span>
+                    <span className="value bg-warning">{Math.round(municipalitySchools.length / (props.municipalitiesSort.length + 1))}</span>
                     <span role="heading" className="text-uppercase">основни училишта во просек, по општина</span>
                   </div>
                 </div>
@@ -150,14 +150,14 @@ const Dashboard = (props) => {
               <div className="card-group">
                 <div className="card">
                   <div className="card-body text-muted">
-                    <span className="value">{Math.round(tenUpSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong class="text-info">повеќе од десет</strong> основни училишта</span>
+                    <span className="value bg-alert">{Math.round(tenUpSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
+                    <span role="heading" className="text-uppercase">општини со <strong class="text-alert">повеќе од десет</strong> основни училишта</span>
                   </div>
                 </div>
                 <div className="card ml-sm-3">
                   <div className="card-body text-muted">
-                    <span className="value">{Math.round(singleSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong class="text-info">само едно</strong> основно училиште</span>
+                    <span className="value bg-danger">{Math.round(singleSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
+                    <span role="heading" className="text-uppercase">општини со <strong class="text-danger">само едно</strong> основно училиште</span>
                   </div>
                 </div>
               </div>
