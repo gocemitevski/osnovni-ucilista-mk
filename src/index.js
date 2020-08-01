@@ -2,6 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ReactGA from 'react-ga';
+import { Cookies } from "react-cookie-consent";
+
+if (Cookies.get("osnovniUcilistaMK") === 'true') {
+  ReactGA.initialize(process.env.REACT_APP_GA, { debug: true });
+}
 
 ReactDOM.render(
   <React.StrictMode>
