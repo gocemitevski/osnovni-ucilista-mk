@@ -48,6 +48,8 @@ main {
 .navbar-footer {
   font-size: $font-size-sm;
   background-color: $dark;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
 
   a {
     color: inherit;
