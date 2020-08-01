@@ -9,6 +9,7 @@ import SelectMunicipality from './SelectMunicipality';
 import { cleanName, transliterate, pageTitle, singularPlural } from '../utils';
 import MunicipalityLink from './MunicipalityLink';
 import OneSchool from './OneSchool';
+import ReactGATrack from './ReactGATrack';
 
 const Dashboard = (props) => {
 
@@ -94,7 +95,7 @@ const Dashboard = (props) => {
   });
 
   return (
-    <main className="row no-gutters main-bg main-bg-wrap">
+    <main className="row no-gutters flex-fill main-bg main-bg-wrap">
       <div className="col-lg-6 bg-info d-flex flex-column h-100">
         <Map scrollWheelZoom={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
@@ -109,6 +110,7 @@ const Dashboard = (props) => {
         </Map>
       </div>
       <div className="col-lg-6 d-flex flex-column h-100">
+      <h1 className="sr-only">Основни училишта</h1>
         <div className="bg-neutral p-3">
           <div className="row no-gutters">
             <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>
@@ -187,7 +189,8 @@ const Dashboard = (props) => {
         </div>
         {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3"><OneSchool key={key} {...props} className="card-one-school" data={school} /></div>)}
       </div>
-    </main >
+      <ReactGATrack />
+    </main>
   );
 }
 

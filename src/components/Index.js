@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SchoolItem from './SchoolItem';
 import NoResults from './NoResults';
 import { pageTitle } from '../utils';
+import ReactGATrack from './ReactGATrack';
 
 const Index = (props) => {
   const [state, setState] = useState({
@@ -42,6 +43,7 @@ const Index = (props) => {
         </div>
         {state.data.length > 0 ? state.data.map((school, key) => <SchoolItem key={key} setScroll={props.setScroll(props.scroll)} data={school} />) : <NoResults />}
       </main>
+      <ReactGATrack />
     </div>
   );
 }
