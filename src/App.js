@@ -100,7 +100,7 @@ function App() {
   }, [skopjeSchoolsCount]);
 
   return (
-    <Router basename="/osnovni-ucilista-mk">
+    <Router basename={`${process.env.PUBLIC_URL}/osnovni-ucilista-mk`}>
       <NavBar routes={routes} data={data.records} />
       <Switch>
         {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} setTitle={setTitle} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
