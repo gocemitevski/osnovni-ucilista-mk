@@ -40,7 +40,7 @@ const About = (props) => {
           <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/gocemitevski/osnovni-ucilista-mk">Изворниот код</a> е достапен на GitHub.</p>
         </div>
       </div>
-      <ReactGATrack />
+      <ReactGATrack {...props} />
     </main>
   );
 }

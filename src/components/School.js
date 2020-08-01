@@ -76,7 +76,7 @@ const School = (props) => {
             </div>
           </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
       </main>
-      <ReactGATrack />
+      <ReactGATrack {...props} title={school[3]} />
     </div>
   );
 }
