@@ -50,7 +50,7 @@ const Dashboard = (props) => {
   });
 
   useEffect(() => {
-    document.title = municipalityId ? pageTitle(municipalitySchools[0][2]) : pageTitle(props.title);
+    document.title = municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title);
   }, [props, municipalitySchools, municipalityId]);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const Dashboard = (props) => {
         </Map>
       </div>
       <div className="col-lg-6 d-flex flex-column h-100">
-      <h1 className="sr-only">Основни училишта</h1>
+        <h1 className="sr-only">Основни училишта</h1>
         <div className="bg-neutral p-3">
           <div className="row no-gutters">
             <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>
@@ -189,7 +189,7 @@ const Dashboard = (props) => {
         </div>
         {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3"><OneSchool key={key} {...props} className="card-one-school" data={school} /></div>)}
       </div>
-      <ReactGATrack {...props} title={municipalityId ? municipalitySchools[0][2] : props.title} />
+      <ReactGATrack {...props} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title)} />
     </main>
   );
 }
