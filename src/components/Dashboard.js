@@ -153,13 +153,13 @@ const Dashboard = (props) => {
                 <div className="card">
                   <div className="card-body text-muted">
                     <span className="value bg-alert">{Math.round(tenUpSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong class="text-alert">повеќе од десет</strong> основни училишта</span>
+                    <span role="heading" className="text-uppercase">општини со <strong className="text-alert">повеќе од десет</strong> основни училишта</span>
                   </div>
                 </div>
                 <div className="card ml-sm-3">
                   <div className="card-body text-muted">
                     <span className="value bg-danger">{Math.round(singleSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong class="text-danger">само едно</strong> основно училиште</span>
+                    <span role="heading" className="text-uppercase">општини со <strong className="text-danger">само едно</strong> основно училиште</span>
                   </div>
                 </div>
               </div>
