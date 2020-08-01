@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const NavBar = (props) => {
 
   const location = useLocation();
-  const pageLink = location.pathname;
+  const pageLink = process.env.PUBLIC_URL + location.pathname;
 
   const [socialIconsData, setSocialIconsData] = useState([
     {
