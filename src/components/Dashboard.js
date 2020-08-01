@@ -97,7 +97,7 @@ const Dashboard = (props) => {
   return (
     <main className="row no-gutters flex-fill main-bg main-bg-wrap">
       <div className="col-lg-6 bg-info d-flex flex-column h-100">
-        <Map scrollWheelZoom={false} dragging={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
+        {props.pageWidth > 767 && <Map scrollWheelZoom={false} dragging={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -107,7 +107,7 @@ const Dashboard = (props) => {
               school[6] && <SchoolMapMarker {...props} key={key} position={school[6]} data={school} />
             )
           })}
-        </Map>
+        </Map>}
       </div>
       <div className="col-lg-6 d-flex flex-column h-100">
         <h1 className="sr-only">Основни училишта</h1>
