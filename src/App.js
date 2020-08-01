@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
 import Index from './components/Index';
 import School from './components/School';
-import ReactGA from 'react-ga';
 import NotFound from './components/NotFound';
-import CookieConsent, { Cookies } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 
 function App() {
 
@@ -100,7 +99,7 @@ function App() {
   }, [skopjeSchoolsCount]);
 
   return (
-    <Router basename={`${process.env.PUBLIC_URL}/`}>
+    <HashRouter basename="/">
       <NavBar routes={routes} data={data.records} />
       <Switch>
         {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} setTitle={setTitle} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
@@ -133,7 +132,7 @@ function App() {
         flipButtons={true}>
         Ова мрежно место користи т.н. колачиња за подобрување на корисничкото искуство. Изберете „Во ред“ или „Не, благодарам“ за да го скриете ова предупредување.
       </CookieConsent>
-    </Router>
+    </HashRouter>
   );
 }
 
