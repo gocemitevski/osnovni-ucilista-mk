@@ -28,6 +28,23 @@ main {
   }
 }
 
+.navbar-brand {
+  white-space: initial;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-border-top {
+  border-top: $spacer/2 solid $primary;
+}
+
+.navbar-border-bottom {
+  border-bottom: $spacer/2 solid $primary;
+}
+
 .navbar-footer {
   font-size: $font-size-sm;
   background-color: $dark;
