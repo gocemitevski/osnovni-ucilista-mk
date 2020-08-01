@@ -29,7 +29,7 @@ const SchoolItem = (props) => {
               <dt>Адреса:</dt>
               <dd><address className="mb-0">{props.data[4]}<br />{props.data[2]}{props.data[7] && `, ${props.data[7]}`}</address></dd>
             </dl>
-            {emails.length > 0 && <ul className="list-inline nav mt-3 mb-0">{emails.map((item, key) => <li className="list-inline-item"><Mail key={key} props={item} /></li>)}</ul>}
+            {emails.length > 0 && <ul className="list-inline nav mt-3 mb-0">{emails.map((item, key) => <li key={key} className="list-inline-item"><Mail props={item} /></li>)}</ul>}
           </div>
         </div>
       </div>
