@@ -9,18 +9,13 @@ import Index from './components/Index';
 import School from './components/School';
 import ReactGA from 'react-ga';
 import NotFound from './components/NotFound';
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 function App() {
 
   const [title, setTitle] = useState((value) => {
     document.title = value;
   });
-
-  // TODO:
-  // врски за споделување по социјални мрежи
-  // содржина за „За изработката“
-  // анимации на елементи
-  // најчести имиња (подобрување, не е побарување)
 
   const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
 
@@ -104,9 +99,6 @@ function App() {
     setSkopjeSchoolsCount(skopjeSchoolsCount);
   }, [skopjeSchoolsCount]);
 
-  ReactGA.initialize(process.env.REACT_APP_GA);
-  ReactGA.pageview(window.location.pathname + window.location.search);
-
   return (
     <Router>
       <NavBar routes={routes} data={data.records} />
@@ -116,7 +108,7 @@ function App() {
         <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
         <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setTitle={setTitle} />} />
       </Switch>
-      <nav className="navbar navbar-footer text-muted">
+      <nav className="navbar navbar-border-top navbar-footer text-muted">
         <ul className="nav flex-fill mb-0">
           <li className="nav-item d-flex flex-wrap align-items-center">
             <span>Извор на основни податоци:</span>
@@ -127,6 +119,20 @@ function App() {
           </li>
         </ul>
       </nav>
+      <CookieConsent
+        location="bottom"
+        buttonText="Во ред"
+        enableDeclineButton={true}
+        declineButtonText="Не, благодарам"
+        cookieName="osnovniUcilistaMK"
+        containerClasses="fixed-bottom bg-warning d-flex flex-wrap justify-content-between align-content-center p-3"
+        contentClasses="d-inline-flex my-auto py-2"
+        buttonClasses="btn btn-success"
+        declineButtonClasses="btn btn-danger ml-2"
+        disableStyles={true}
+        flipButtons={true}>
+        Ова мрежно место користи т.н. колачиња за подобрување на корисничкото искуство. Изберете „Во ред“ или „Не, благодарам“ за да го скриете ова предупредување.
+      </CookieConsent>
     </Router>
   );
 }
