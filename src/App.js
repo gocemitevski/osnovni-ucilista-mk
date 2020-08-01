@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
 import { HashRouter, Route, Switch } from 'react-router-dom';
@@ -17,6 +17,8 @@ function App() {
   });
 
   const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
+
+  const [pageWidth, setPageWidth] = useState(0);
 
   const skopjeTitle = "Град Скопје";
 
@@ -98,25 +100,33 @@ function App() {
     setSkopjeSchoolsCount(skopjeSchoolsCount);
   }, [skopjeSchoolsCount]);
 
+  useLayoutEffect(() => {
+    function updateSize() {
+      setPageWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
   return (
     <HashRouter>
       <NavBar routes={routes} data={data.records} />
       <Switch>
-        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
+        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
         <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
-        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />
+        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} />} />
         <Route path="*" render={props => <NotFound {...props} title="Грешка 404" />} />
       </Switch>
-      <nav className="navbar navbar-border-top navbar-footer text-muted">
-        <ul className="nav flex-fill mb-0">
-          <li className="nav-item d-flex flex-wrap align-items-center">
-            <span>Извор на основни податоци:</span>
-            <a className="nav-link" target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
-          </li>
-          <li className="nav-item ml-auto flex-wrap d-flex align-items-center">
-            Изработка на компјутерска презентација: <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
-          </li>
-        </ul>
+      <nav className="navbar navbar-border-top flex-column flex-sm-row navbar-footer text-muted">
+        <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">
+          <span className="mr-2">Извор на основни податоци:</span>
+          <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
+        </div>
+        <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-end">
+          <span className="mr-2">Изработка на компјутерска презентација:</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
+        </div>
       </nav>
       <CookieConsent
         location="bottom"
