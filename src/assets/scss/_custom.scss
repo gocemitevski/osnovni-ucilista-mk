@@ -55,6 +55,12 @@ main {
   }
 }
 
+.main-menu {
+  .nav-item {
+    white-space: nowrap;
+  }
+}
+
 .leaflet-container {
   width: 100%;
   height: 100%;
