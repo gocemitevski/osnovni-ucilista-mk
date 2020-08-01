@@ -202,6 +202,7 @@ $paragraph-margin-bottom:   1rem !default;
 
 $grid-breakpoints: (
   xs: 0,
+  s:  360px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -702,7 +703,7 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                .75rem !default;
+$nav-link-padding-y:                1rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
 
@@ -714,7 +715,7 @@ $nav-tabs-link-active-color:        $gray-700 !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 
-$nav-pills-border-radius:           $border-radius !default;
+$nav-pills-border-radius:           0 !default;
 $nav-pills-link-active-color:       $component-active-color !default;
 $nav-pills-link-active-bg:          $component-active-bg !default;
 
@@ -727,7 +728,7 @@ $nav-divider-margin-y:              $spacer / 2 !default;
 $navbar-padding-y:                  $spacer / 2 !default;
 $navbar-padding-x:                  $spacer !default;
 
-$navbar-nav-link-padding-x:         .5rem !default;
+$navbar-nav-link-padding-x:         1rem !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
