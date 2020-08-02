@@ -62,7 +62,7 @@ const School = (props) => {
   });
 
   return (
-    <div className="main-bg flex-fill">
+    <div className="main-bg page flex-fill">
       <main className="container py-5">
         <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} />
         {nearbySchools.length > 1 ?
