@@ -10,6 +10,8 @@ import { cleanName, transliterate, pageTitle, singularPlural } from '../utils';
 import MunicipalityLink from './MunicipalityLink';
 import OneSchool from './OneSchool';
 import ReactGATrack from './ReactGATrack';
+import Card from './Card';
+import CardHeader from './CardHeader';
 
 const Dashboard = (props) => {
 
@@ -136,49 +138,23 @@ const Dashboard = (props) => {
             !municipalityId &&
             <React.Fragment>
               <div className="card-group">
-                <div className="card">
-                  <div className="card-body text-muted">
-                    <span className="value bg-success">{municipalitySchools.length}</span>
-                    <span role="heading" className="text-uppercase">основни училишта во сите општини во Р. С. Македонија</span>
-                  </div>
-                </div>
-                <div className="card ml-sm-3">
-                  <div className="card-body text-muted">
-                    <span className="value bg-warning">{Math.round(municipalitySchools.length / (props.municipalitiesSort.length + 1))}</span>
-                    <span role="heading" className="text-uppercase">основни училишта во просек, по општина</span>
-                  </div>
-                </div>
+                <Card title="основни училишта во сите општини во Р. С. Македонија" bgColor="success" value={municipalitySchools.length} />
+                <Card title="основни училишта во просек, по општина" className="ml-sm-3" bgColor="warning" value={Math.round(municipalitySchools.length / (props.municipalitiesSort.length + 1))} />
+              </div>
+              <div className="card-group">
+                <Card title="општини со повеќе од десет основни училишта" bgColor="alert" value={`${Math.round(tenUpSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%`} />
+                <Card title="општини со само едно основно училиште" className="ml-sm-3" bgColor="danger" value={`${Math.round(singleSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%`} />
               </div>
               <div className="card-group">
                 <div className="card">
-                  <div className="card-body text-muted">
-                    <span className="value bg-alert">{Math.round(tenUpSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong className="text-alert">повеќе од десет</strong> основни училишта</span>
-                  </div>
-                </div>
-                <div className="card ml-sm-3">
-                  <div className="card-body text-muted">
-                    <span className="value bg-danger">{Math.round(singleSchoolMunicipalities.length / (props.municipalitiesSort.length + 1) * 100)}%</span>
-                    <span role="heading" className="text-uppercase">општини со <strong className="text-danger">само едно</strong> основно училиште</span>
-                  </div>
-                </div>
-              </div>
-              <div className="card-group">
-                <div className="card">
-                  <div className="card-header text-muted">
-                    <i className="fa-2x fas fa-sort-amount-up mr-4"></i>
-                    <span role="heading" className="text-uppercase">Општини со најмногу основни училишта</span>
-                  </div>
+                  <CardHeader icon="fa-sort-amount-up" heading="Општини со најмногу основни училишта" />
                   <div className="list-group list-group-flush border-top-0">
                     <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" {...props} municipality={props.skopjeTitle} schoolCount={props.skopjeSchoolsCount} />
                     {Object.values(mostSchools.map((municipality, index) => municipality[1] >= 8 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />)).reverse()}
                   </div>
                 </div>
                 <div className="card ml-sm-3">
-                  <div className="card-header text-muted">
-                    <i className="fa-2x fas fa-sort-amount-down mr-4"></i>
-                    <span role="heading" className="text-uppercase">Општини со најмалку основни училишта</span>
-                  </div>
+                  <CardHeader icon="fa-sort-amount-down" heading="Општини со најмалку основни училишта" />
                   <div className="list-group list-group-flush border-top-0">
                     {Object.values(mostSchools.map((municipality, index) => municipality[1] === 1 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />))}
                   </div>
