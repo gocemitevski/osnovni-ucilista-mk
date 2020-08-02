@@ -2,9 +2,9 @@
   @extend .d-flex;
   @extend .flex-column;
 
-  @include media-breakpoint-up(lg) {
-    height: 100vh;
-  }
+  // @include media-breakpoint-up(lg) {
+  //   height: 100vh;
+  // }
 }
 
 .main-bg {
@@ -30,6 +30,10 @@ main {
 
 .navbar-brand {
   white-space: initial;
+
+  @include media-breakpoint-down(lg) {
+    margin-right: 0;
+  }
 }
 
 .navbar {
@@ -155,6 +159,8 @@ main {
 }
 
 .page {
+  min-height: calc(100vh - 125px);
+
   h1 {
     font-size: $h3-font-size;
   }
