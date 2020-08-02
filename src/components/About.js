@@ -14,7 +14,7 @@ const About = (props) => {
   }, [props]);
 
   return (
-    <main className="container flex-grow-1 page py-5">
+    <main className="container flex-fill page py-5">
       <h1 className="h3">{props.title}</h1>
       <div className="row">
         <div className="col-lg-6 order-lg-2">
