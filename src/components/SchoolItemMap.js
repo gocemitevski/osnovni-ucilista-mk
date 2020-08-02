@@ -26,7 +26,7 @@ const SchoolItemMap = (props) => {
           {position ? <SchoolMap {...props} style={{ minHeight: 'inherit' }} scrollWheelZoom={false} position={position} zoom={props.zoom} /> : <NoMap />}
         </div>
         <div className="col-lg-6">
-          <div className="card-body py-5 pr-5 d-flex flex-column h-100">
+          <div className="card-body p-5 d-flex flex-column h-100">
             <h1 className="h2 mb-3 font-weight-bold card-title">{props.data[3]}</h1>
             <dl className="mb-0">
               <dt>Адреса:</dt>
