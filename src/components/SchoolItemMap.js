@@ -1,18 +1,7 @@
 import React from 'react';
 import SchoolMap from './SchoolMap';
+import Mail from './Mail';
 import NoMap from './NoMap';
-
-const Mail = (props) => {
-
-  return (
-    <li className="list-inline-item mt-2">
-      <a className="btn btn-success" href={`mailto:${props.props}`}>
-        <i className="fa fa-fw fa-envelope mr-2"></i>
-        <span>{props.props}</span>
-      </a>
-    </li>
-  )
-}
 
 const SchoolItemMap = (props) => {
 

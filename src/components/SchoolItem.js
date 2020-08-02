@@ -1,15 +1,6 @@
 import React from 'react';
 import SchoolItemLink from './SchoolItemLink';
-
-const Mail = (props) => {
-
-  return (
-    <a className="nav-link my-1 mr-sm-2 btn-sm btn-success btn-truncate" title={props.props} href={`mailto:${props.props}`}>
-      <i className="fa fa-fw fa-envelope mr-2"></i>
-      <span>{props.props}</span>
-    </a>
-  )
-}
+import Mail from './Mail';
 
 const SchoolItem = (props) => {
 
@@ -29,7 +20,7 @@ const SchoolItem = (props) => {
               <dt>Адреса:</dt>
               <dd><address className="mb-0">{props.data[4]}<br />{props.data[2]}{props.data[7] && `, ${props.data[7]}`}</address></dd>
             </dl>
-            {emails.length > 0 && <ul className="list-inline nav mt-3 mb-0">{emails.map((item, key) => <li key={key} className="list-inline-item"><Mail props={item} /></li>)}</ul>}
+            {emails.length > 0 && <ul className="list-inline mt-3 mb-0">{emails.map((item, key) => <Mail key={key} props={item} />)}</ul>}
           </div>
         </div>
       </div>
