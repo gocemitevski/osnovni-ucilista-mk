@@ -33,7 +33,7 @@ const NavBar = (props) => {
   }, [socialIconsData]);
 
   return (
-    <nav className="navbar navbar-border-bottom navbar-expand-s flex-column flex-lg-row navbar-dark bg-dark">
+    <nav className="navbar position-sticky sticky-top navbar-border-bottom navbar-expand-s flex-column flex-lg-row navbar-dark bg-dark">
       <Link className="navbar-brand d-flex flex-wrap flex-column flex-sm-row text-center align-items-center justify-content-center order-1 order-lg-0" to="/">
         <i className="fa fa-fw fa-chalkboard-teacher my-2 my-lg-auto"></i>
         <strong role="heading" className="ml-sm-3">{process.env.REACT_APP_TITLE}</strong>
