@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b3ec39167ff8b8f1181fadc5410c6ee3",
+    "revision": "f4eb810bc4c771992afdc6d851fa10b2",
     "url": "/osnovni-ucilista-mk/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/osnovni-ucilista-mk/static/css/2.55a95de6.chunk.css"
   },
   {
-    "revision": "713933f19587dc54b33b",
+    "revision": "973db0f2991678f8d3bd",
     "url": "/osnovni-ucilista-mk/static/css/main.27adb348.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "713933f19587dc54b33b",
-    "url": "/osnovni-ucilista-mk/static/js/main.f6d47122.chunk.js"
+    "revision": "973db0f2991678f8d3bd",
+    "url": "/osnovni-ucilista-mk/static/js/main.246f3f7e.chunk.js"
   },
   {
     "revision": "d214110a94d16bae98b5",
