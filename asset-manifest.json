@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/osnovni-ucilista-mk/static/css/main.4fc4dd18.chunk.css",
-    "main.js": "/osnovni-ucilista-mk/static/js/main.682e5ca9.chunk.js",
-    "runtime-main.js": "/osnovni-ucilista-mk/static/js/runtime-main.30247155.js",
-    "static/css/2.55a95de6.chunk.css": "/osnovni-ucilista-mk/static/css/2.55a95de6.chunk.css",
-    "static/js/2.a91d466b.chunk.js": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js",
+    "main.css": "/osnovni-ucilista-mk/static/css/main.cb2a6cfd.chunk.css",
+    "main.js": "/osnovni-ucilista-mk/static/js/main.fa416c27.chunk.js",
+    "runtime-main.js": "/osnovni-ucilista-mk/static/js/runtime-main.f17b6f78.js",
+    "static/css/2.2eacecfa.chunk.css": "/osnovni-ucilista-mk/static/css/2.2eacecfa.chunk.css",
+    "static/js/2.c87b8872.chunk.js": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js",
     "index.html": "/osnovni-ucilista-mk/index.html",
-    "precache-manifest.244fa9b9befaf3799efe57defa90c4ae.js": "/osnovni-ucilista-mk/precache-manifest.244fa9b9befaf3799efe57defa90c4ae.js",
+    "precache-manifest.9fce04bcf9569008d32227cca90ac212.js": "/osnovni-ucilista-mk/precache-manifest.9fce04bcf9569008d32227cca90ac212.js",
     "service-worker.js": "/osnovni-ucilista-mk/service-worker.js",
-    "static/js/2.a91d466b.chunk.js.LICENSE.txt": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js.LICENSE.txt",
+    "static/js/2.c87b8872.chunk.js.LICENSE.txt": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/osnovni-ucilista-mk/static/media/fa-solid-900.ec763292.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.30247155.js",
-    "static/css/2.55a95de6.chunk.css",
-    "static/js/2.a91d466b.chunk.js",
-    "static/css/main.4fc4dd18.chunk.css",
-    "static/js/main.682e5ca9.chunk.js"
+    "static/js/runtime-main.f17b6f78.js",
+    "static/css/2.2eacecfa.chunk.css",
+    "static/js/2.c87b8872.chunk.js",
+    "static/css/main.cb2a6cfd.chunk.css",
+    "static/js/main.fa416c27.chunk.js"
   ]
 }

@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f3ca90f950d361be834b6a575d3522ae",
+    "revision": "8190fc320dd5a31403d8650c1e1c7a8c",
     "url": "/osnovni-ucilista-mk/index.html"
   },
   {
-    "revision": "c13965622c4cdc36cfa1",
-    "url": "/osnovni-ucilista-mk/static/css/2.55a95de6.chunk.css"
+    "revision": "bcd91bfdb40ef867dde8",
+    "url": "/osnovni-ucilista-mk/static/css/2.2eacecfa.chunk.css"
   },
   {
-    "revision": "0bb1d9dac910f053ebc3",
-    "url": "/osnovni-ucilista-mk/static/css/main.4fc4dd18.chunk.css"
+    "revision": "6810b4cfd4903535bafb",
+    "url": "/osnovni-ucilista-mk/static/css/main.cb2a6cfd.chunk.css"
   },
   {
-    "revision": "c13965622c4cdc36cfa1",
-    "url": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js"
+    "revision": "bcd91bfdb40ef867dde8",
+    "url": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js"
   },
   {
     "revision": "3b4e5c54f62eb52614b787fdc31f2a6c",
-    "url": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js.LICENSE.txt"
+    "url": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0bb1d9dac910f053ebc3",
-    "url": "/osnovni-ucilista-mk/static/js/main.682e5ca9.chunk.js"
+    "revision": "6810b4cfd4903535bafb",
+    "url": "/osnovni-ucilista-mk/static/js/main.fa416c27.chunk.js"
   },
   {
-    "revision": "d214110a94d16bae98b5",
-    "url": "/osnovni-ucilista-mk/static/js/runtime-main.30247155.js"
+    "revision": "5f4eab33a59d7014952c",
+    "url": "/osnovni-ucilista-mk/static/js/runtime-main.f17b6f78.js"
   },
   {
     "revision": "0cb5a5c0d251c109458c85c6afeffbaa",
