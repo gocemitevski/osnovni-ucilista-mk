@@ -9,7 +9,7 @@ export function socialLinkButtons(title = document.title, location = window.loca
     {
       "name": "twitter",
       "title": "Twitter",
-      "href": "https://twitter.com/share?&text=" + encodeURIComponent(title) + "&url=" + location,
+      "href": "https://twitter.com/share?text=" + encodeURIComponent(title) + "&url=" + location,
       "icon": "fa-twitter"
     },
     {
