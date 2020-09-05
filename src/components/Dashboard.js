@@ -9,9 +9,10 @@ import SelectMunicipality from './SelectMunicipality';
 import { cleanName, transliterate, pageTitle, singularPlural } from '../utils';
 import MunicipalityLink from './MunicipalityLink';
 import OneSchool from './OneSchool';
-import ReactGATrack from './ReactGATrack';
 import Card from './Card';
 import CardHeader from './CardHeader';
+import { socialLinkButtons } from '../utils';
+import ReactGATrack from './ReactGATrack';
 
 const Dashboard = (props) => {
 
@@ -56,7 +57,6 @@ const Dashboard = (props) => {
   }, [props, municipalitySchools, municipalityId]);
 
   useEffect(() => {
-    props.setScroll(props.scroll);
     window.scrollTo(props.scroll);
   }, [props]);
 
@@ -87,6 +87,10 @@ const Dashboard = (props) => {
   useEffect(() => {
     setTenUpSchoolMunicipalities(tenUpSchoolMunicipalities);
   }, [tenUpSchoolMunicipalities]);
+
+  useEffect(() => {
+    props.setSocialIconLinks(() => socialLinkButtons());
+  }, []);
 
   delete L.Icon.Default.prototype._getIconUrl;
 

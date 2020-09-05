@@ -7,11 +7,14 @@ import { cleanName, transliterate, pageTitle } from '../utils';
 import OneSchool from './OneSchool';
 import SchoolItemNoDetails from './SchoolItemNoDetails';
 import MunicipalityLink from './MunicipalityLink';
+import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 
 const School = (props) => {
 
   let { schoolId } = useParams();
+
+  const { setSocialIconLinks } = props;
 
   const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
 
@@ -52,6 +55,10 @@ const School = (props) => {
   useEffect(() => {
     setZoom(zoom);
   }, [zoom]);
+
+  useEffect(() => {
+    setSocialIconLinks(() => socialLinkButtons());
+  }, [setSocialIconLinks]);
 
   delete L.Icon.Default.prototype._getIconUrl;
 

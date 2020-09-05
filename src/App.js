@@ -9,6 +9,7 @@ import Index from './components/Index';
 import School from './components/School';
 import NotFound from './components/NotFound';
 import CookieConsent from "react-cookie-consent";
+import { socialLinkButtons } from './utils';
 
 function App() {
 
@@ -72,6 +73,8 @@ function App() {
     return sortedMunicipalities;
   });
 
+  const [socialIconLinks, setSocialIconLinks] = useState([]);
+
   useEffect(() => {
     setTitle(process.env.REACT_APP_TITLE);
   }, [title]);
@@ -109,14 +112,18 @@ function App() {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  useLayoutEffect(() => {
+    setSocialIconLinks(() => socialLinkButtons());
+  }, []);
+
   return (
     <HashRouter>
-      <NavBar routes={routes} data={data.records} />
+      <NavBar routes={routes} data={data.records} socialIconLinks={socialIconLinks} />
       <Switch>
-        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} />} />)}
-        <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} />} />
-        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} />} />
-        <Route path="*" render={props => <NotFound {...props} title="Грешка 404" />} />
+        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} setScroll={setScroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
+        <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} setScroll={setScroll} data={data.records} skopjeTitle={skopjeTitle} setSocialIconLinks={setSocialIconLinks} />} />
+        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} setScroll={setScroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} setSocialIconLinks={setSocialIconLinks} />} />
+        <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />} />
       </Switch>
       <nav className="navbar navbar-border-top flex-column flex-sm-row navbar-footer text-muted">
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">

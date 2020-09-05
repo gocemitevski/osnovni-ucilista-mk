@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import SchoolItem from './SchoolItem';
 import NoResults from './NoResults';
-import { pageTitle } from '../utils';
+import { pageTitle, socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 
 const Index = (props) => {
+
+  const { setSocialIconLinks } = props;
+
   const [state, setState] = useState({
     initialData: [],
     data: props.data,
@@ -21,17 +24,20 @@ const Index = (props) => {
   }
 
   const returnFilteredData = (initialData, value) => {
-    return value && initialData.filter(el => el.some(item => item.toString().toLowerCase().includes(value.toLowerCase())));
+    return value && initialData.filter(el => el.some(item => item.toString().trim().toLowerCase().includes(value.trim().toLowerCase())));
   }
 
   useEffect(() => {
-    props.setScroll(props.scroll);
     window.scrollTo(props.scroll);
   }, [props]);
 
   useEffect(() => {
     document.title = pageTitle(props.title);
   }, [props]);
+
+  useEffect(() => {
+    setSocialIconLinks(() => socialLinkButtons());
+  }, [setSocialIconLinks]);
 
   return (
     <div className="main-bg flex-fill">

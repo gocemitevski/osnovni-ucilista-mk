@@ -1,17 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { pageTitle } from '../utils';
+import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 
 const About = (props) => {
 
+  const { setSocialIconLinks } = props;
+
   useEffect(() => {
-    props.setScroll(props.scroll);
     window.scrollTo(props.scroll);
   }, [props]);
 
   useEffect(() => {
     document.title = pageTitle(props.title);
   }, [props]);
+
+  useEffect(() => {
+    setSocialIconLinks(() => socialLinkButtons());
+  }, [setSocialIconLinks]);
 
   return (
     <main className="container flex-fill page py-5">
