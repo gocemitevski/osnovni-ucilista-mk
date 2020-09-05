@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { pageTitle } from '../utils';
 import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
