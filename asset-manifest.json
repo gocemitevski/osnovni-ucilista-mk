@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/osnovni-ucilista-mk/static/css/main.4fc4dd18.chunk.css",
-    "main.js": "/osnovni-ucilista-mk/static/js/main.3b43aead.chunk.js",
+    "main.js": "/osnovni-ucilista-mk/static/js/main.4f25156c.chunk.js",
     "runtime-main.js": "/osnovni-ucilista-mk/static/js/runtime-main.30247155.js",
     "static/css/2.55a95de6.chunk.css": "/osnovni-ucilista-mk/static/css/2.55a95de6.chunk.css",
     "static/js/2.a91d466b.chunk.js": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js",
     "index.html": "/osnovni-ucilista-mk/index.html",
-    "precache-manifest.7bef0faa888159dbe7549d3fc2f5b356.js": "/osnovni-ucilista-mk/precache-manifest.7bef0faa888159dbe7549d3fc2f5b356.js",
+    "precache-manifest.9cdc87b4e58ca9d74b685d76242bb2a2.js": "/osnovni-ucilista-mk/precache-manifest.9cdc87b4e58ca9d74b685d76242bb2a2.js",
     "service-worker.js": "/osnovni-ucilista-mk/service-worker.js",
     "static/js/2.a91d466b.chunk.js.LICENSE.txt": "/osnovni-ucilista-mk/static/js/2.a91d466b.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/osnovni-ucilista-mk/static/media/fa-solid-900.ec763292.svg"
@@ -16,6 +16,6 @@
     "static/css/2.55a95de6.chunk.css",
     "static/js/2.a91d466b.chunk.js",
     "static/css/main.4fc4dd18.chunk.css",
-    "static/js/main.3b43aead.chunk.js"
+    "static/js/main.4f25156c.chunk.js"
   ]
 }
