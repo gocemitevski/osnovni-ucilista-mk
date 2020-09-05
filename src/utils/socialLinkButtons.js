@@ -15,7 +15,7 @@ export function socialLinkButtons(title = document.title, location = window.loca
     {
       "name": "linkedin",
       "title": "LinkedIn",
-      "href": "http://www.linkedin.com/shareArticle?mini=true&url=" + location + "&title=" + encodeURIComponent(title),
+      "href": "http://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(location) + "&title=" + encodeURIComponent(title),
       "icon": "fa-linkedin"
     },
   ];
