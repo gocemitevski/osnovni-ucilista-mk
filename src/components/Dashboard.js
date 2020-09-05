@@ -18,6 +18,8 @@ const Dashboard = (props) => {
 
   let { municipalityId } = useParams();
 
+  const { setSocialIconLinks } = props;
+
   const [municipalitySchools, setMunicipalitySchools] = useState(() => {
     return municipalityId ? props.data.filter(el =>
       (cleanName(transliterate(el[2].toString().toLowerCase())) === municipalityId) || (el[7] && cleanName(transliterate(el[7].toString().toLowerCase())) === municipalityId)
@@ -89,8 +91,8 @@ const Dashboard = (props) => {
   }, [tenUpSchoolMunicipalities]);
 
   useEffect(() => {
-    props.setSocialIconLinks(() => socialLinkButtons());
-  }, []);
+    setSocialIconLinks(() => socialLinkButtons());
+  }, [setSocialIconLinks]);
 
   delete L.Icon.Default.prototype._getIconUrl;
 
