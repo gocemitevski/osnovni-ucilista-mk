@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/osnovni-ucilista-mk/precache-manifest.5005ab9aee6cac906849faa80c10fef5.js"
+  "/osnovni-ucilista-mk/precache-manifest.ed7412306d24d31c230b7c3fa50a9f54.js"
 );
 
 self.addEventListener('message', (event) => {
