@@ -5,7 +5,6 @@ import { cleanName, transliterate } from '../utils';
 const SchoolItemNoDetails = (props) => {
 
   useEffect(() => {
-    props.setScroll(props.scroll);
     window.scrollTo(props.scroll);
   }, [props]);
 
