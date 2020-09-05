@@ -1,17 +1,6 @@
-import React, { useEffect } from 'react';
-import { socialLinkButtons } from '../utils';
+import React from 'react';
 
 const NoResults = (props) => {
-
-  const { setSocialIconLinks } = props;
-
-  useEffect(() => {
-    document.title = props.title;
-  }, [props]);
-
-  useEffect(() => {
-    setSocialIconLinks(() => socialLinkButtons());
-  }, [setSocialIconLinks]);
 
   return (
     <article className="card my-4" key={props.index}>

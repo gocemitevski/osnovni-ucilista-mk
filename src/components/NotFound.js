@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { pageTitle } from '../utils';
+import { pageTitle, socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 
 const NotFound = (props) => {
 
   const location = useLocation();
+  const { setSocialIconLinks } = props;
 
   useEffect(() => {
     document.title = pageTitle(props.title);
   }, [props]);
+
+  useEffect(() => {
+    setSocialIconLinks(() => socialLinkButtons());
+  }, [setSocialIconLinks]);
 
   return (
     <main className="container flex-fill page py-5">
