@@ -3,13 +3,13 @@ export function socialLinkButtons(title = document.title, location = window.loca
     {
       "name": "facebook",
       "title": "Facebook",
-      "href": "https://www.facebook.com/sharer.php?t=" + encodeURIComponent(title) + "&u=" + location,
+      "href": "https://www.facebook.com/sharer.php?t=" + encodeURIComponent(title) + "&u=" + encodeURIComponent(location),
       "icon": "fa-facebook"
     },
     {
       "name": "twitter",
       "title": "Twitter",
-      "href": "https://twitter.com/share?text=" + encodeURIComponent(title) + "&url=" + location,
+      "href": "https://twitter.com/share?text=" + encodeURIComponent(title) + "&url=" + encodeURIComponent(location),
       "icon": "fa-twitter"
     },
     {
