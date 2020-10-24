@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/osnovni-ucilista-mk/static/css/main.cb2a6cfd.chunk.css",
-    "main.js": "/osnovni-ucilista-mk/static/js/main.fa416c27.chunk.js",
-    "runtime-main.js": "/osnovni-ucilista-mk/static/js/runtime-main.f17b6f78.js",
-    "static/css/2.2eacecfa.chunk.css": "/osnovni-ucilista-mk/static/css/2.2eacecfa.chunk.css",
-    "static/js/2.c87b8872.chunk.js": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js",
-    "index.html": "/osnovni-ucilista-mk/index.html",
-    "precache-manifest.75bf65e50c42328a61ae6c65827ce458.js": "/osnovni-ucilista-mk/precache-manifest.75bf65e50c42328a61ae6c65827ce458.js",
-    "service-worker.js": "/osnovni-ucilista-mk/service-worker.js",
-    "static/js/2.c87b8872.chunk.js.LICENSE.txt": "/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/osnovni-ucilista-mk/static/media/fa-solid-900.ec763292.svg"
+    "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.04b257f2.chunk.css",
+    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.cdac9c3d.chunk.js",
+    "runtime-main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/runtime-main.88e9fae9.js",
+    "static/css/2.2eacecfa.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.2eacecfa.chunk.css",
+    "static/js/2.c87b8872.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js",
+    "index.html": "https://gocemitevski.github.io/osnovni-ucilista-mk/index.html",
+    "precache-manifest.6f332063fa71ead3fa4df1ede4fb9f55.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.6f332063fa71ead3fa4df1ede4fb9f55.js",
+    "service-worker.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/service-worker.js",
+    "static/js/2.c87b8872.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/media/fa-solid-900.ec763292.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f17b6f78.js",
+    "static/js/runtime-main.88e9fae9.js",
     "static/css/2.2eacecfa.chunk.css",
     "static/js/2.c87b8872.chunk.js",
-    "static/css/main.cb2a6cfd.chunk.css",
-    "static/js/main.fa416c27.chunk.js"
+    "static/css/main.04b257f2.chunk.css",
+    "static/js/main.cdac9c3d.chunk.js"
   ]
 }
