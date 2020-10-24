@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8190fc320dd5a31403d8650c1e1c7a8c",
+    "revision": "2f32a7cac136c653ec2d9aff89e3a272",
     "url": "/osnovni-ucilista-mk/index.html"
   },
   {
