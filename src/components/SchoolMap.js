@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, TileLayer } from 'react-leaflet';
+import { MapContainer as Map, TileLayer } from 'react-leaflet';
 import SchoolMapMarker from './SchoolMapMarker';
 
 const SchoolMap = (props) => {

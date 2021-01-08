@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Map, TileLayer } from 'react-leaflet';
+import { MapContainer as Map, TileLayer } from 'react-leaflet';
 import SchoolMapMarker from './SchoolMapMarker';
 import SchoolItem from './SchoolItem';
 import SelectMunicipality from './SelectMunicipality';
