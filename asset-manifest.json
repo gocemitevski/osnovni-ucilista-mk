@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.aaeecaa9.chunk.css",
-    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.03076b0e.chunk.js",
-    "runtime-main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/runtime-main.c8573c62.js",
-    "static/css/2.6aef49ee.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.6aef49ee.chunk.css",
-    "static/js/2.9efc6e92.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.9efc6e92.chunk.js",
+    "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.04b257f2.chunk.css",
+    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.57621479.chunk.js",
+    "runtime-main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/runtime-main.88e9fae9.js",
+    "static/css/2.2eacecfa.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.2eacecfa.chunk.css",
+    "static/js/2.c87b8872.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js",
     "index.html": "https://gocemitevski.github.io/osnovni-ucilista-mk/index.html",
-    "static/js/2.9efc6e92.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.9efc6e92.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/media/fa-solid-900.46fdbd2d.woff"
+    "precache-manifest.a1bb69d6608d64f0d927f67aa2324d5e.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.a1bb69d6608d64f0d927f67aa2324d5e.js",
+    "service-worker.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/service-worker.js",
+    "static/js/2.c87b8872.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.c87b8872.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/media/fa-solid-900.ec763292.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c8573c62.js",
-    "static/css/2.6aef49ee.chunk.css",
-    "static/js/2.9efc6e92.chunk.js",
-    "static/css/main.aaeecaa9.chunk.css",
-    "static/js/main.03076b0e.chunk.js"
+    "static/js/runtime-main.88e9fae9.js",
+    "static/css/2.2eacecfa.chunk.css",
+    "static/js/2.c87b8872.chunk.js",
+    "static/css/main.04b257f2.chunk.css",
+    "static/js/main.57621479.chunk.js"
   ]
 }
