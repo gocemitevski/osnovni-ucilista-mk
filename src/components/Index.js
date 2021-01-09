@@ -16,10 +16,9 @@ const Index = (props) => {
 
   const onSearch = (e) => {
     if (e.target.value) {
-      const filteredData = returnFilteredData(props.data, e.target.value);
-      setState({ ...state, data: filteredData, search: e.target.value })
+      setState({ ...state, data: returnFilteredData(props.data, e.target.value), search: e.target.value })
     } else {
-      setState({ ...state, data: state.data })
+      setState({ ...state, data: props.data })
     }
   }
 
