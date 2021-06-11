@@ -14,9 +14,7 @@ const School = (props) => {
 
   let { schoolId } = useParams();
 
-  const { setSocialIconLinks } = props;
-
-  const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
+  const { setSocialIconLinks, scroll } = props;
 
   const [school, setSchool] = useState(() => {
     const schoolResult = props.data.filter(el => el.some(item => cleanName(transliterate(item.toString() + ' ' + el[2].toString())).toLowerCase().includes(schoolId)));
@@ -38,9 +36,6 @@ const School = (props) => {
 
   useEffect(() => {
     setSchool(school);
-  }, [school]);
-
-  useEffect(() => {
     document.title = pageTitle(school[3]);
   }, [school]);
 
@@ -57,6 +52,10 @@ const School = (props) => {
   }, [zoom]);
 
   useEffect(() => {
+    window.scrollTo(scroll);
+  }, [scroll]);
+
+  useEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());
   }, [setSocialIconLinks]);
 
@@ -71,14 +70,14 @@ const School = (props) => {
   return (
     <div className="main-bg page flex-fill">
       <main className="container py-5">
-        <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} />
+        <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setSchool={setSchool} setPosition={setPosition} />
         {nearbySchools.length > 1 ?
           <div className="row justify-content-center">
             <div className="col-xl-8">
               <h2 className="mt-5 mb-4 text-center">Други училишта во <MunicipalityLink {...props} municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink {...props} municipality={school[7]} />}
               </h2>
               <ul className="list-group">
-                {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setScroll={setScroll} setSchool={setSchool} setPosition={setPosition} /></li>)}
+                {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setSchool={setSchool} setPosition={setPosition} /></li>)}
               </ul>
             </div>
           </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
