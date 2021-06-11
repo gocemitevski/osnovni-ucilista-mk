@@ -80,7 +80,6 @@ function App() {
   }, [title]);
 
   useEffect(() => {
-    setScroll(scroll);
     window.scrollTo(scroll);
   }, [scroll]);
 

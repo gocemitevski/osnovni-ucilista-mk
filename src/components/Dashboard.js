@@ -18,7 +18,7 @@ const Dashboard = (props) => {
 
   let { municipalityId } = useParams();
 
-  const { setSocialIconLinks } = props;
+  const { setSocialIconLinks, scroll } = props;
 
   const [municipalitySchools, setMunicipalitySchools] = useState(() => {
     return municipalityId ? props.data.filter(el =>
@@ -36,9 +36,9 @@ const Dashboard = (props) => {
     return position ? 18 : 9;
   });
 
-  const [selectedMunicipality, setSelectedMunicipality] = useState(municipalityId || 0);
+  const [selectedMunicipality, setSelectedMunicipality] = useState(() => municipalityId || 0);
 
-  const [mostSchools, setMostSchools] = useState(props.municipalitiesSort);
+  const [mostSchools, setMostSchools] = useState(() => props.municipalitiesSort);
 
   const [singleSchoolMunicipalities, setSingleSchoolMunicipalities] = useState(() => {
     const singleSchoolMunicipalitiesTotal = [];
@@ -59,8 +59,8 @@ const Dashboard = (props) => {
   }, [props, municipalitySchools, municipalityId]);
 
   useEffect(() => {
-    window.scrollTo(props.scroll);
-  }, [props]);
+    window.scrollTo(scroll);
+  }, [scroll]);
 
   useEffect(() => {
     setPosition(position);
@@ -139,7 +139,7 @@ const Dashboard = (props) => {
           </div>
         </div>
         <div className="px-3 flex-fill results">
-          {(municipalityId && municipalitySchools.length > 0) && municipalitySchools.map((school, key) => <SchoolItem key={key} setScroll={props.setScroll(props.scroll)} data={school} />)}
+          {(municipalityId && municipalitySchools.length > 0) && municipalitySchools.map((school, key) => <SchoolItem key={key} data={school} />)}
           {
             !municipalityId &&
             <React.Fragment>
@@ -169,7 +169,7 @@ const Dashboard = (props) => {
             </React.Fragment>
           }
         </div>
-        {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3"><OneSchool key={key} {...props} className="card-one-school" data={school} /></div>)}
+        {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3" key={key}><OneSchool {...props} className="card-one-school" data={school} /></div>)}
       </div>
       <ReactGATrack {...props} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title)} />
     </main>
