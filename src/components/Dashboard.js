@@ -13,6 +13,7 @@ import Card from './Card';
 import CardHeader from './CardHeader';
 import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
+import { faSortAmountUp, faSortAmountDown } from '@fortawesome/free-solid-svg-icons'
 
 const Dashboard = (props) => {
 
@@ -153,14 +154,14 @@ const Dashboard = (props) => {
               </div>
               <div className="card-group">
                 <div className="card">
-                  <CardHeader icon="fa-sort-amount-up" heading="Општини со најмногу основни училишта" />
+                  <CardHeader icon={faSortAmountUp} heading="Општини со најмногу основни училишта" />
                   <div className="list-group list-group-flush border-top-0">
                     <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" {...props} municipality={props.skopjeTitle} schoolCount={props.skopjeSchoolsCount} />
                     {Object.values(mostSchools.map((municipality, index) => municipality[1] >= 8 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />)).reverse()}
                   </div>
                 </div>
                 <div className="card ml-sm-3">
-                  <CardHeader icon="fa-sort-amount-down" heading="Општини со најмалку основни училишта" />
+                  <CardHeader icon={faSortAmountDown} heading="Општини со најмалку основни училишта" />
                   <div className="list-group list-group-flush border-top-0">
                     {Object.values(mostSchools.map((municipality, index) => municipality[1] === 1 && <MunicipalityLink className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" key={index} {...props} municipality={municipality[0]} schoolCount={municipality[1]} />))}
                   </div>

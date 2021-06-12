@@ -35,7 +35,6 @@ const School = (props) => {
   });
 
   useEffect(() => {
-    setSchool(school);
     document.title = pageTitle(school[3]);
   }, [school]);
 
@@ -57,7 +56,7 @@ const School = (props) => {
 
   useEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());
-  }, [setSocialIconLinks]);
+  }, [school, setSocialIconLinks]);
 
   delete L.Icon.Default.prototype._getIconUrl;
 
@@ -70,11 +69,11 @@ const School = (props) => {
   return (
     <div className="main-bg page flex-fill">
       <main className="container py-5">
-        <SchoolItemMap {...props} data={school} position={position} zoom={zoom} setSchool={setSchool} setPosition={setPosition} />
+        <SchoolItemMap data={school} position={position} zoom={zoom} setSchool={setSchool} setPosition={setPosition} />
         {nearbySchools.length > 1 ?
           <div className="row justify-content-center">
             <div className="col-xl-8">
-              <h2 className="mt-5 mb-4 text-center">Други училишта во <MunicipalityLink {...props} municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink {...props} municipality={school[7]} />}
+              <h2 className="mt-5 mb-4 text-center">Други училишта во <MunicipalityLink municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink municipality={school[7]} />}
               </h2>
               <ul className="list-group">
                 {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setSchool={setSchool} setPosition={setPosition} /></li>)}
@@ -82,7 +81,7 @@ const School = (props) => {
             </div>
           </div> : <div className="my-5 row justify-content-center"><div className="col-lg-10"><OneSchool data={school} /></div></div>}
       </main>
-      <ReactGATrack {...props} title={school[3]} />
+      <ReactGATrack title={school[3]} />
     </div>
   );
 }
