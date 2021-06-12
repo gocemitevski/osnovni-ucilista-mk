@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFrown } from '@fortawesome/free-regular-svg-icons'
 
 const NoResults = (props) => {
 
@@ -6,7 +8,7 @@ const NoResults = (props) => {
     <article className="card my-4" key={props.index}>
       <div className="row no-gutters">
         <div className="col-lg-4 border-0 card-header px-3 py-5 d-flex align-items-center justify-content-lg-center">
-          <i className="text-muted far fa-4x fa-fw fa-frown mr-2"></i>
+          <FontAwesomeIcon fixedWidth className="text-muted mr-2" size="4x" icon={faFrown} />
         </div>
         <div className="col-lg-8">
           <div className="card-body">
