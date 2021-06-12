@@ -11,7 +11,7 @@ const SchoolItem = (props) => {
       <div className="row no-gutters">
         <div className="col-lg-6 p-4 d-flex">
           <h2 className="h5 mb-0 flex-fill">
-            <SchoolItemLink {...props} data={props.data} setSchool={props.setSchool} setPosition={props.setPosition} />
+            <SchoolItemLink {...props} data={props.data} />
           </h2>
         </div>
         <div className="col-lg-6">
