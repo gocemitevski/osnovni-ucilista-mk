@@ -172,7 +172,7 @@ const Dashboard = (props) => {
         </div>
         {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3" key={key}><OneSchool {...props} className="card-one-school" data={school} /></div>)}
       </div>
-      <ReactGATrack {...props} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title)} />
+      <ReactGATrack location={props.location} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title)} />
     </main>
   );
 }
