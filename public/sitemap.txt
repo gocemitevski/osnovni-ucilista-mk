@@ -363,7 +363,6 @@ https://gocemitevski.github.io/osnovni-ucilista-mk/#/uchilishte/omu-sergej-mihaj
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/uchilishte/oou-strasho-pindzur-karbinci
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/uchilishte/oou-kiro-gligorov-centar
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/opshtina/grad-skopje/
-[
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/opshtina/pehchevo/
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/opshtina/novaci/
 https://gocemitevski.github.io/osnovni-ucilista-mk/#/opshtina/makedonski-brod/
