@@ -10,6 +10,7 @@ import School from './components/School';
 import NotFound from './components/NotFound';
 import CookieConsent from "react-cookie-consent";
 import { socialLinkButtons } from './utils';
+// import { cleanName, transliterate } from './utils';
 
 function App() {
 
@@ -73,6 +74,14 @@ function App() {
     return sortedMunicipalities;
   });
 
+  // const [sitemap, setSitemap] = useState(() => {
+  //   const homepage = `https://gocemitevski.github.io/osnovni-ucilista-mk/#`;
+  //   const sitemap = data.records.map(item => `${homepage}/uchilishte/${encodeURIComponent(cleanName(transliterate(item[3] + ' ' + item[2])).toLowerCase())}`);
+  //   sitemap.push(`${homepage}/opshtina/${encodeURIComponent(cleanName(transliterate(skopjeTitle)).toLowerCase())}/`);
+  //   sitemap.push(municipalitiesSort.map(item => `${homepage}/opshtina/${encodeURIComponent(cleanName(transliterate(item[0])).toLowerCase())}/`))
+  //   return sitemap;
+  // })
+
   const [socialIconLinks, setSocialIconLinks] = useState([]);
 
   useEffect(() => {
@@ -115,6 +124,10 @@ function App() {
   useLayoutEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());
   }, []);
+
+  // useEffect(() => {
+  //   console.log(sitemap);
+  // }, []);
 
   return (
     <HashRouter>
