@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://gocemitevski.github.io/osnovni-ucilista-mk/sitemap.txt
+Sitemap: https://gocemitevski.github.io/osnovni-ucilista-mk/sitemap.xml
