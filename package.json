@@ -1,6 +1,7 @@
 {
   "homepage": "https://gocemitevski.github.io/osnovni-ucilista-mk/",
   "name": "osnovni-ucilista-mk",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:sitemap": "node --experimental-modules ./src/buildSitemap.js",
     "test": "react-scripts test",
     "format": "prettier --write \"./**\"",
     "eject": "react-scripts eject"
