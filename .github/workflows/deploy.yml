@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: update npm to ^7
+      run: npm install -g npm@^7
 
     - name: install
       run: npm install
