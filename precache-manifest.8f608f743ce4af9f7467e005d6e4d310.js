@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9ebc6a8aca7447008f3702bb700178fd",
+    "revision": "4b6ed1275b2f41e4beb1ea5b9dc17c4c",
     "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.5abdb074.chunk.css"
   },
   {
-    "revision": "702e8bd6d8e3f8db0d56",
-    "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.2a837afc.chunk.css"
+    "revision": "1d9d50a06fc2761d34ed",
+    "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.4dee9c5f.chunk.css"
   },
   {
     "revision": "e24d4259d3153b2b1705",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.767b4067.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "702e8bd6d8e3f8db0d56",
-    "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.09654303.chunk.js"
+    "revision": "1d9d50a06fc2761d34ed",
+    "url": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.95512e0b.chunk.js"
   },
   {
     "revision": "0f6bab421f523c7967a3",
