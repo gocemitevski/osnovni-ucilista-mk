@@ -13,7 +13,7 @@ const NoResults = (props) => {
         <div className="col-lg-8">
           <div className="card-body">
             <h2 className="h4 card-title">
-              <span role="heading">Без резултати</span>
+              <span role="heading" aria-roledescription="heading">Без резултати</span>
             </h2>
             <p className="card-text">Извинете, <strong>не успеав да најдам основни училишта за внесениот збор</strong>. Ве молам проверете дали случајно погрешивте при внесувањето.</p>
             <p className="mb-0">Во спротивно, можеби најдовте училиште што го нема во нашиот адресар. Би ви бил благодарен, доколку за тоа <a href="mailto:goce.mitevski@gmail.com">ме известите</a>.</p>
