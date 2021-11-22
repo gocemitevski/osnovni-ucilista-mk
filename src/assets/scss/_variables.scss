@@ -1,6 +1,8 @@
 // Color system
 
-$blue:    #2981ca;
+$blue:    #1678ca;
+$orange:  #ff5400;
+$yellow:  #c18802;
 
 $colors: (
   "blue":       $blue
@@ -82,6 +84,7 @@ $nav-pills-link-active-bg:          $primary;
 // Navbar
 
 $navbar-nav-link-padding-x:         1rem;
+$navbar-dark-color:                 rgba($white, .55);
 
 
 // Dropdowns
