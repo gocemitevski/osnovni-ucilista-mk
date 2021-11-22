@@ -6,7 +6,7 @@ const Card = (props) => {
     <div className={`card ${props.className || ''}`}>
       <div className="card-body text-muted">
         <span className={`value bg-${props.bgColor}`}>{props.value}</span>
-        <span role="heading" className="text-uppercase flex-grow-1 my-1">{props.title}</span>
+        <span role="heading" aria-roledescription="heading" className="text-uppercase flex-grow-1 my-1">{props.title}</span>
       </div>
     </div>
   );
