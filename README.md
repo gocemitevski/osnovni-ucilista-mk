@@ -1,4 +1,4 @@
-[![Build and Deploy](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml)
+[![Build and Deploy](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml) [![CI](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
