@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.0ea8679f.chunk.css",
-    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.686d912c.chunk.js",
+    "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.ccef2df7.chunk.css",
+    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.7ab91bf3.chunk.js",
     "runtime-main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/runtime-main.88e9fae9.js",
-    "static/css/2.5abdb074.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.5abdb074.chunk.css",
-    "static/js/2.767b4067.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.767b4067.chunk.js",
+    "static/css/2.5275d8c9.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.5275d8c9.chunk.css",
+    "static/js/2.af78167b.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.af78167b.chunk.js",
     "index.html": "https://gocemitevski.github.io/osnovni-ucilista-mk/index.html",
-    "precache-manifest.9e097f8a185bc5487da913aa8f8e85e6.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.9e097f8a185bc5487da913aa8f8e85e6.js",
+    "precache-manifest.50eb3a9128438354c1b2d9968a15762f.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.50eb3a9128438354c1b2d9968a15762f.js",
     "service-worker.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/service-worker.js",
-    "static/js/2.767b4067.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.767b4067.chunk.js.LICENSE.txt"
+    "static/js/2.af78167b.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.af78167b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.88e9fae9.js",
-    "static/css/2.5abdb074.chunk.css",
-    "static/js/2.767b4067.chunk.js",
-    "static/css/main.0ea8679f.chunk.css",
-    "static/js/main.686d912c.chunk.js"
+    "static/css/2.5275d8c9.chunk.css",
+    "static/js/2.af78167b.chunk.js",
+    "static/css/main.ccef2df7.chunk.css",
+    "static/js/main.7ab91bf3.chunk.js"
   ]
 }
