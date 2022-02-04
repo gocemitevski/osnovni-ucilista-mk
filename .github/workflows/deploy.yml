@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
   pull_request:
-
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
+    
     - name: update npm to ^7
       run: sudo npm install -g npm@^7
 
@@ -21,9 +21,6 @@ jobs:
       env:
         NODE_ENV: production
       run: npm run build
-
-    - name: build sitemap
-      run: npm run --silent build:sitemap > build/sitemap.xml
 
     - name: deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
