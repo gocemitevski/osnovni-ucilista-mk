@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
 
 jobs:
@@ -10,25 +10,25 @@ jobs:
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
 
-    - name: install
-      run: npm install
+      - name: install
+        run: npm install
 
-    - name: build
-      env:
-        NODE_ENV: production
-      run: npm run build
+      - name: build
+        env:
+          NODE_ENV: production
+        run: npm run build
 
-    - name: build sitemap
-      run: npm run --silent build:sitemap
+      - name: build sitemap
+        run: npm run --silent build:sitemap
 
-    - name: run Lighthouse CI
-      run: |
-        npm install -g @lhci/cli@0.8.x
-        lhci autorun
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.8.x
+          lhci autorun

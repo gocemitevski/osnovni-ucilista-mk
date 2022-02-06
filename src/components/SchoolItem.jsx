@@ -1,9 +1,8 @@
-import React from 'react';
-import SchoolItemLink from './SchoolItemLink';
-import Mail from './Mail';
+import React from "react";
+import SchoolItemLink from "./SchoolItemLink";
+import Mail from "./Mail";
 
 const SchoolItem = (props) => {
-
   const emails = props.data[5].split(/[\s|,|;]/);
 
   return (
@@ -18,14 +17,27 @@ const SchoolItem = (props) => {
           <div className="card-body">
             <dl className="mb-0">
               <dt>Адреса:</dt>
-              <dd><address className="mb-0">{props.data[4]}<br />{props.data[2]}{props.data[7] && `, ${props.data[7]}`}</address></dd>
+              <dd>
+                <address className="mb-0">
+                  {props.data[4]}
+                  <br />
+                  {props.data[2]}
+                  {props.data[7] && `, ${props.data[7]}`}
+                </address>
+              </dd>
             </dl>
-            {emails.length > 0 && <ul className="list-inline mt-3 mb-0">{emails.map((item, key) => <Mail key={key} props={item} />)}</ul>}
+            {emails.length > 0 && (
+              <ul className="list-inline mt-3 mb-0">
+                {emails.map((item, key) => (
+                  <Mail key={key} props={item} />
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
     </article>
   );
-}
+};
 
 export default SchoolItem;

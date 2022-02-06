@@ -2,34 +2,34 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   deploy:
     name: Deploy to GitHub pages
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
 
-    - name: install
-      run: npm install
+      - name: install
+        run: npm install
 
-    - name: build
-      env:
-        NODE_ENV: production
-      run: npm run build
+      - name: build
+        env:
+          NODE_ENV: production
+        run: npm run build
 
-    - name: build sitemap
-      run: npm run --silent build:sitemap > build/sitemap.xml
+      - name: build sitemap
+        run: npm run --silent build:sitemap > build/sitemap.xml
 
-    - name: deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/master'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

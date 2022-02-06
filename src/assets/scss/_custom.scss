@@ -96,7 +96,7 @@ main {
   }
 
   .leaflet-popup-content {
-    padding: $spacer $spacer*3 $spacer/2 $spacer/2;
+    padding: $spacer $spacer * 3 $spacer/2 $spacer/2;
   }
 }
 
@@ -110,7 +110,6 @@ main {
   }
 
   .card-group {
-
     .card-header,
     .card-body {
       display: flex;
@@ -125,7 +124,7 @@ main {
     }
 
     .card-header {
-      padding: $spacer*1.5;
+      padding: $spacer * 1.5;
     }
 
     .value {
@@ -135,7 +134,7 @@ main {
       font-weight: $font-weight-bold;
       padding: $spacer/2;
       margin-top: $spacer/2;
-      margin-right: $spacer*1.25;
+      margin-right: $spacer * 1.25;
       margin-bottom: $spacer/2;
       flex: 0 1 20%;
       text-align: center;
@@ -153,7 +152,7 @@ main {
 
 .btn-truncate {
   @extend .text-truncate;
-  padding: $spacer/2 $spacer*0.75;
+  padding: $spacer/2 $spacer * 0.75;
 
   span {
     max-width: 100%;
@@ -168,7 +167,7 @@ main {
   }
 
   h2 {
-    margin-top: $spacer*2;
+    margin-top: $spacer * 2;
     font-size: $h4-font-size;
   }
 
@@ -179,7 +178,7 @@ main {
   h1,
   h2,
   h3 {
-    margin-bottom: $spacer*1.5;
+    margin-bottom: $spacer * 1.5;
   }
 }
 
