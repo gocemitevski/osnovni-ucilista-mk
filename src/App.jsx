@@ -74,14 +74,6 @@ function App() {
     return sortedMunicipalities;
   });
 
-  // const [sitemap, setSitemap] = useState(() => {
-  //   const homepage = `https://gocemitevski.github.io/osnovni-ucilista-mk/#`;
-  //   const sitemap = data.records.map(item => `${homepage}/uchilishte/${encodeURIComponent(cleanName(transliterate(item[3] + ' ' + item[2])).toLowerCase())}`);
-  //   sitemap.push(`${homepage}/opshtina/${encodeURIComponent(cleanName(transliterate(skopjeTitle)).toLowerCase())}/`);
-  //   municipalitiesSort.map(item => sitemap.push(`${homepage}/opshtina/${encodeURIComponent(cleanName(transliterate(item[0])).toLowerCase())}`));
-  //   return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.map(el => `<url><loc>${el}</loc></url>`).join('')}</urlset>`;
-  // });
-
   const [socialIconLinks, setSocialIconLinks] = useState([]);
 
   useEffect(() => {
@@ -124,10 +116,6 @@ function App() {
   useLayoutEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());
   }, []);
-
-  // useEffect(() => {
-  //   console.log(sitemap);
-  // }, [sitemap]);
 
   return (
     <HashRouter>
