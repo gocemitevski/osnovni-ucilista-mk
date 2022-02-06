@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Map, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import SchoolMapMarker from './SchoolMapMarker';
 import SchoolItem from './SchoolItem';
 import SelectMunicipality from './SelectMunicipality';
@@ -106,7 +106,7 @@ const Dashboard = (props) => {
   return (
     <main className="row no-gutters flex-fill main-bg main-bg-wrap">
       <div className="col-lg-6 bg-info d-flex flex-column h-100">
-        {props.pageWidth > 767 && <Map scrollWheelZoom={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
+        {props.pageWidth > 767 && <MapContainer scrollWheelZoom={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -116,7 +116,7 @@ const Dashboard = (props) => {
               school[6] && <SchoolMapMarker {...props} key={key} position={school[6]} data={school} />
             )
           })}
-        </Map>}
+        </MapContainer>}
       </div>
       <div className="col-lg-6 d-flex flex-column h-100">
         <h1 className="sr-only">Основни училишта</h1>
