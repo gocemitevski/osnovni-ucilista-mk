@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
@@ -132,12 +132,12 @@ function App() {
   return (
     <HashRouter>
       <NavBar routes={routes} data={data.records} socialIconLinks={socialIconLinks} />
-      <Switch>
+      <Routes>
         {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
         <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} data={data.records} skopjeTitle={skopjeTitle} setSocialIconLinks={setSocialIconLinks} />} />
         <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} setSocialIconLinks={setSocialIconLinks} />} />
         <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />} />
-      </Switch>
+      </Routes>
       <nav className="navbar navbar-border-top flex-column flex-sm-row navbar-footer">
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">
           <span className="mr-2">Извор на основни податоци:</span>
