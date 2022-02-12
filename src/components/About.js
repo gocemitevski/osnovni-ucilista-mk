@@ -25,7 +25,7 @@ const About = (props) => {
       <div className="row">
         <div className="col-lg-6 order-lg-2">
           <figure>
-            <a href="/osnovni-uchilishta-r-s-makedonija-1200x627.png">
+            <a href={`${process.env.PUBLIC_URL}/osnovni-uchilishta-r-s-makedonija-1200x627.png`}>
               <img className="img-fluid" src={`${process.env.PUBLIC_URL}/osnovni-uchilishta-r-s-makedonija-1200x627.png`} alt="" />
             </a>
           </figure>
