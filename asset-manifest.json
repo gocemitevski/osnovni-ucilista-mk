@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/main.ccef2df7.chunk.css",
-    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.7ab91bf3.chunk.js",
+    "main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/main.d25db0ea.chunk.js",
     "runtime-main.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/runtime-main.88e9fae9.js",
     "static/css/2.5275d8c9.chunk.css": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/css/2.5275d8c9.chunk.css",
     "static/js/2.af78167b.chunk.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.af78167b.chunk.js",
     "index.html": "https://gocemitevski.github.io/osnovni-ucilista-mk/index.html",
-    "precache-manifest.50eb3a9128438354c1b2d9968a15762f.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.50eb3a9128438354c1b2d9968a15762f.js",
+    "precache-manifest.1d617dbf72e4547fd1eced586bbb2e23.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/precache-manifest.1d617dbf72e4547fd1eced586bbb2e23.js",
     "service-worker.js": "https://gocemitevski.github.io/osnovni-ucilista-mk/service-worker.js",
     "static/js/2.af78167b.chunk.js.LICENSE.txt": "https://gocemitevski.github.io/osnovni-ucilista-mk/static/js/2.af78167b.chunk.js.LICENSE.txt"
   },
@@ -15,6 +15,6 @@
     "static/css/2.5275d8c9.chunk.css",
     "static/js/2.af78167b.chunk.js",
     "static/css/main.ccef2df7.chunk.css",
-    "static/js/main.7ab91bf3.chunk.js"
+    "static/js/main.d25db0ea.chunk.js"
   ]
 }
