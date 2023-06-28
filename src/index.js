@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Cookies } from "react-cookie-consent";
 
 if (Cookies.get("osnovniUcilistaMK") === 'true') {
