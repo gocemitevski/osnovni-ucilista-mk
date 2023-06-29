@@ -6,7 +6,7 @@ The intention of the project is to visually interpret the official registry of e
 
 The default [data.gov.mk dataset](http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta) has been enriched with geo-spatial coordinates for each school and the available school information have been unified.
 
-[![Build and Deploy](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml) [![CI](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml)
+[![Build and Deploy](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml)
 
 ## Dependencies
 
