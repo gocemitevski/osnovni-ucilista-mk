@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
@@ -130,7 +130,7 @@ function App() {
   // }, [sitemap]);
 
   return (
-    <HashRouter>
+    <BrowserRouter basename="/osnovni-ucilista-mk">
       <NavBar routes={routes} data={data.records} socialIconLinks={socialIconLinks} />
       <Switch>
         {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
@@ -162,7 +162,7 @@ function App() {
         flipButtons={true}>
         Ова мрежно место користи т.н. колачиња за подобрување на корисничкото искуство. Изберете „Во ред“ или „Не, благодарам“ за да го скриете ова предупредување.
       </CookieConsent>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
