@@ -1,4 +1,22 @@
+# Elementary Schools in R. N. Macedonia
+
+Elementary Schools in R. N. Macedonia is an independent project based on a [data.gov.mk dataset](http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta) by the Ministry of Education and Science of the Republic of North Macedonia.
+
+The intention of the project is to visually interpret the official registry of elementary schools in North Macedonia and enable comparison by the number of elementary schools across cities and regions.
+
+The default [data.gov.mk dataset](http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta) has been enriched with geo-spatial coordinates for each school and the available school information have been unified.
+
 [![Build and Deploy](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/deploy.yml) [![CI](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml/badge.svg)](https://github.com/gocemitevski/osnovni-ucilista-mk/actions/workflows/ci.yml)
+
+## Dependencies
+
+* Bootstrap v4.6.0
+* React v16.14.0
+* React Router DOM v5.2.0
+* ReactGA4 v2.1.0
+* Leaflet v1.6.0
+* React Leaflet v2.8.0
+* FontAwesome v5.15.4
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -8,23 +26,23 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
+Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
+Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
+Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
+The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
