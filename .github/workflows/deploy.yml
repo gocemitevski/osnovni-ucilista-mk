@@ -20,7 +20,7 @@ jobs:
       run: npm install
 
     - name: build sitemap
-      run: npm run --silent build:sitemap
+      run: npm run build:sitemap
 
     - name: build
       env:
