@@ -29,7 +29,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:sitemap": "node --experimental-modules ./src/buildSitemap.js",
+    "build:sitemap": "node --experimental-modules ./src/buildSitemap.js > ./public/sitemap.xml",
     "test": "react-scripts test",
     "format": "prettier --write \"./**\"",
     "eject": "react-scripts eject"
