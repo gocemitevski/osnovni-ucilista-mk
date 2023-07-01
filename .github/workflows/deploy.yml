@@ -19,13 +19,13 @@ jobs:
     - name: install
       run: npm install
 
+    - name: build sitemap
+      run: npm run --silent build:sitemap
+
     - name: build
       env:
         NODE_ENV: production
       run: npm run build
-
-    - name: build sitemap
-      run: npm run --silent build:sitemap > build/sitemap.xml
 
     - name: deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
