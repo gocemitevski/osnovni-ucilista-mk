@@ -49,7 +49,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run build:sitemap`
 
-Builds the sitemap based on the [buildSitemap.js](/src/buildSitemap.js) script and prints the output in the console. The output needs to be manually copied over the existing content in [sitemap.xml](/public/sitemap.xml) to be applied.
+Builds the sitemap based on the [buildSitemap.js](/src/buildSitemap.js) script and prints the output in the console. The output is automatically saved to [sitemap.xml](/public/sitemap.xml).
 
 ### `npm run eject`
 
