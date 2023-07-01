@@ -25,8 +25,8 @@ const municipalitiesSort = () => {
 
   const sortedMunicipalities = [];
 
-  for (var municipality in municipalitiesCount) {
-    sortedMunicipalities.push([municipality, municipalitiesCount[municipality]]);
+  for (var municipality in municipalitiesCount()) {
+    sortedMunicipalities.push([municipality, municipalitiesCount()[municipality]]);
   }
 
   sortedMunicipalities.sort(function (a, b) {
