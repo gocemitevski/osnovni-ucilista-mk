@@ -2,7 +2,7 @@
   "homepage": "https://gocemitevski.github.io/osnovni-ucilista-mk",
   "name": "osnovni-ucilista-mk",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -21,8 +21,7 @@
     "react-ga4": "^2.1.0",
     "react-leaflet": "^2.8.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4",
-    "typescript": "^3.9.7"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "predeploy": "npm run build",
