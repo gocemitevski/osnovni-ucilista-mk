@@ -10,7 +10,7 @@ The default [data.gov.mk dataset](http://data.gov.mk/mk/dataset/pernctap-ha-ocho
 
 ## Dependencies
 
-* Bootstrap v4.6.0
+* Bootstrap v4.6.2
 * React v16.14.0
 * React Router DOM v5.2.1
 * ReactGA4 v2.1.0
