@@ -1,13 +1,8 @@
-import { cleanName } from './utils/cleanName.js';
-import { transliterate } from './utils/transliterate.js';
+const cleanName = require('./utils/cleanName.cjs');
+const transliterate = require('./utils/transliterate.cjs');
 
-import * as fs from 'fs';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-let data = JSON.parse(fs.readFileSync(__dirname + '/data/data.json', 'utf8'));
+const fs = require('node:fs');
+let data = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'));
 
 const skopjeTitle = "Град Скопје";
 
