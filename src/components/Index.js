@@ -50,9 +50,9 @@ const Index = (props) => {
   return (
     <div className="main-bg flex-fill">
       <main className="container py-5">
-        <div className="form-group">
+        <div className="form-group mb-4">
           <label htmlFor="schoolSearch" className="sr-only">Барајте училиште</label>
-          <input id="schoolSearch" placeholder="Барајте според име на училиште, адреса, град и сл." type="text" className="form-control" value={state.search} onChange={(e) => onSearch(e)}></input>
+          <input id="schoolSearch" placeholder="Барајте според име на училиште, адреса, град и сл." type="text" className="form-control form-control-lg" value={state.search} onChange={(e) => onSearch(e)}></input>
           {state.data.length > 0 && <div className="mx-3 my-2">
             <small className="form-text text-muted ml-auto">приказ на вкупно <strong className="badge badge-pill badge-info mx-1">{state.data.length}</strong> {state.data.length % 10 === 1 && state.data.length % 11 === 1 ? 'основно училиште' : 'основни училишта'}
               {state.namesData.length > 0 && <span>, од кои <strong className="badge badge-pill badge-warning mx-1">{state.namesData.length}</strong> т.е. <span className="badge badge-pill badge-success mx-1">{`${parseFloat((state.namesData.length / props.data.length) * 100).toFixed(floatDecimals).toLocaleString()}%`}</span> го содржат бараниот поим во своето име, а <strong className="badge badge-pill badge-danger mx-1">{`${parseFloat((100 - (state.namesData.length / props.data.length) * 100)).toFixed(floatDecimals).toLocaleString()}%`}</strong> не го содржат</span>}
