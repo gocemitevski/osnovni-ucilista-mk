@@ -31,7 +31,7 @@ const municipalitiesSort = () => {
   return sortedMunicipalities;
 };
 
-const homepage = `https://gocemitevski.github.io/osnovni-ucilista-mk`;
+const homepage = `https://gocemitevski.github.io/osnovni-ucilista-mk/?`;
 const sitemap = data.records.map(item => `${homepage}/uchilishte/${encodeURIComponent(cleanName(transliterate(item[3] + ' ' + item[2])).toLowerCase())}`);
 sitemap.push(`${homepage}/adresar`);
 sitemap.push(`${homepage}/za-izrabotkata`);
