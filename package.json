@@ -1,7 +1,7 @@
 {
   "homepage": "https://gocemitevski.github.io/osnovni-ucilista-mk",
   "name": "osnovni-ucilista-mk",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
