@@ -31,7 +31,6 @@
     "build:sitemap": "node ./src/buildSitemap.js > ./public/sitemap.xml",
     "test": "react-scripts test",
     "format": "prettier --write \"./**\"",
-    "eject": "react-scripts eject",
     "dev": "vite"
   },
   "eslintConfig": {
