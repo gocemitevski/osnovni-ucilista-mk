@@ -26,12 +26,13 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "vite build",
     "build:sitemap": "node ./src/buildSitemap.js > ./public/sitemap.xml",
     "test": "react-scripts test",
     "format": "prettier --write \"./**\"",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "vite"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,6 +53,8 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^3.1.0",
     "prettier": "^2.3.1",
-    "sass": "^1.49.7"
+    "sass": "^1.49.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.1.0"
   }
 }
