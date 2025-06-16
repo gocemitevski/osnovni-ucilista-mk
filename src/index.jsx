@@ -6,7 +6,7 @@ import ReactGA from 'react-ga4';
 import { Cookies } from "react-cookie-consent";
 
 if (Cookies.get("osnovniUcilistaMK") === 'true') {
-  ReactGA.initialize(process.env.REACT_APP_GA, { debug: false });
+  ReactGA.initialize(process.env.REACT_APP_GA, { debug: false, gaOptions: { cookieDomain: "gocemitevski.github.io" } });
 }
 
 ReactDOM.render(
