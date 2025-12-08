@@ -10,13 +10,13 @@ The default [data.gov.mk dataset](http://data.gov.mk/mk/dataset/pernctap-ha-ocho
 
 ## Dependencies
 
-* Bootstrap v4.6.2
-* React v16.14.0
-* React Router DOM v5.2.1
-* ReactGA4 v2.1.0
-* Leaflet v1.6.0
-* React Leaflet v2.8.0
-* FontAwesome v5.15.4
+- Bootstrap v4.6.2
+- React v17.0.2
+- React Router DOM v5.2.1
+- ReactGA4 v2.1.0
+- Leaflet v1.6.0
+- React Leaflet v2.8.0
+- FontAwesome v7.1.0
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
