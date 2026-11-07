@@ -47,7 +47,7 @@ Formats the project with Prettier.
 
 ## Deployment
 
-Pushing to `master` triggers the [Build and Deploy](/.github/workflows/deploy.yml) GitHub Actions workflow. It installs dependencies with `npm ci`, regenerates the sitemap, builds the app and publishes `build/` to the `gh-pages` branch.
+Pushing to `master` triggers the [Build and Deploy](/.github/workflows/deploy.yml) GitHub Actions workflow. It installs dependencies with `npm ci`, regenerates the sitemap, builds the app and publishes `build/` to the `gh-pages` branch. The workflow checks out the full git history so the sitemap can use each page's last content change as its `lastmod`.
 
 ## Learn More
 

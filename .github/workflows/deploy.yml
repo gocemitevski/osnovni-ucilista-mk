@@ -17,6 +17,9 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v7
+      with:
+        # Full history so buildSitemap.js can derive real lastmod dates.
+        fetch-depth: 0
 
     - name: Use Node.js 24.x
       uses: actions/setup-node@v7
