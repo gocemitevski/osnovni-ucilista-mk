@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { pageTitle } from '../utils';
-import { socialLinkButtons } from '../utils';
+import { pageDescription, setPageMeta, socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 
 const About = (props) => {
@@ -12,7 +11,7 @@ const About = (props) => {
   }, [props]);
 
   useEffect(() => {
-    document.title = pageTitle(props.title);
+    setPageMeta(props.title, pageDescription('изработката на регистарот и адресарот на основните училишта'));
   }, [props]);
 
   useEffect(() => {

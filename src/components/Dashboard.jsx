@@ -9,7 +9,7 @@ import { Map, TileLayer } from 'react-leaflet';
 import SchoolMapMarker from './SchoolMapMarker';
 import SchoolItem from './SchoolItem';
 import SelectMunicipality from './SelectMunicipality';
-import { cleanName, transliterate, pageTitle, singularPlural } from '../utils';
+import { cleanName, transliterate, pageTitle, pageDescription, setPageMeta, singularPlural } from '../utils';
 import MunicipalityLink from './MunicipalityLink';
 import OneSchool from './OneSchool';
 import Card from './Card';
@@ -65,11 +65,11 @@ const Dashboard = (props) => {
 
   useEffect(() => {
     if (!municipalityId) {
-      document.title = pageTitle(props.title);
+      setPageMeta(props.title, pageDescription('адресарот на сите основни училишта во Р. С. Македонија'));
     } else if (municipalityId === 'grad-skopje') {
-      document.title = pageTitle(props.skopjeTitle);
+      setPageMeta(props.skopjeTitle, pageDescription('основните училишта во Град Скопје'));
     } else if (municipalitySchools[0]) {
-      document.title = pageTitle(municipalitySchools[0][2]);
+      setPageMeta(municipalitySchools[0][2], pageDescription('основните училишта во општина ' + municipalitySchools[0][2]));
     }
   }, [props, municipalitySchools, municipalityId]);
 

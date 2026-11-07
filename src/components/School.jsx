@@ -6,7 +6,7 @@ import iconUrl from 'leaflet/dist/images/marker-icon.png';
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/leaflet.css';
 import SchoolItemMap from './SchoolItemMap';
-import { cleanName, transliterate, pageTitle } from '../utils';
+import { baseSchoolSlug, schoolSlug, pageTitle, pageDescription, setPageMeta } from '../utils';
 import OneSchool from './OneSchool';
 import SchoolItemNoDetails from './SchoolItemNoDetails';
 import MunicipalityLink from './MunicipalityLink';
@@ -16,8 +16,14 @@ import NotFound from './NotFound';
 
 const findSchool = (data, schoolId) => {
   if (!schoolId) return undefined;
-  const schoolResult = data.filter(el => el.some(item => cleanName(transliterate(item.toString() + ' ' + el[2].toString())).toLowerCase().includes(schoolId)));
-  return schoolResult[0];
+
+  // Match the deduplicated slug first.
+  const exactMatch = data.find(el => schoolSlug(el) === schoolId);
+  if (exactMatch) return exactMatch;
+
+  // Backwards compatibility: before duplicate slugs were disambiguated, both
+  // schools in a duplicate group resolved to the base slug (the first record).
+  return data.find(el => baseSchoolSlug(el) === schoolId);
 };
 
 const findNearbySchools = (data, school) => {
@@ -44,7 +50,7 @@ const School = (props) => {
 
   useEffect(() => {
     if (school) {
-      document.title = pageTitle(school[3]);
+      setPageMeta(school[3], pageDescription('училиштето ' + school[3] + ' во ' + school[2]));
     }
   }, [school]);
 

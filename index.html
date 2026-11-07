@@ -5,10 +5,6 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="%REACT_APP_DESCRIPTION%"
-    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -27,12 +23,39 @@
     <title>%REACT_APP_TITLE%</title>
 
     <meta name="google-site-verification" content="pXNkbz1ln-8sRLEU5WD8p-CXHWb1zIwQFUzpDHwULEk" />
-    <meta property="og:title" content="%REACT_APP_TITLE%" />
     <meta name="description" content="%REACT_APP_DESCRIPTION%" />
+
+    <link rel="canonical" href="%PUBLIC_URL%/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="%REACT_APP_TITLE%" />
+    <meta property="og:locale" content="mk_MK" />
+    <meta property="og:title" content="%REACT_APP_TITLE%" />
     <meta property="og:description" content="%REACT_APP_DESCRIPTION%" />
+    <meta property="og:url" content="%PUBLIC_URL%/" />
+    <meta property="og:image" content="%PUBLIC_URL%/osnovni-uchilishta-r-s-makedonija-1200x627.png" />
+    <meta property="og:image:alt" content="%REACT_APP_TITLE%" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@GoceMitevski" />
-    <meta property="og:image" content="%PUBLIC_URL%/osnovni-uchilishta-r-s-makedonija-1200x627.png" />
+    <meta name="twitter:title" content="%REACT_APP_TITLE%" />
+    <meta name="twitter:description" content="%REACT_APP_DESCRIPTION%" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/osnovni-uchilishta-r-s-makedonija-1200x627.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "%REACT_APP_TITLE%",
+        "url": "%PUBLIC_URL%/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "%PUBLIC_URL%/adresar?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
 
     <link crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
 

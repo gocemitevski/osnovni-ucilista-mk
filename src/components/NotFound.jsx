@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { pageTitle, socialLinkButtons } from '../utils';
+import { setPageMeta, socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
@@ -11,7 +11,7 @@ const NotFound = (props) => {
   const { setSocialIconLinks } = props;
 
   useEffect(() => {
-    document.title = pageTitle(props.title);
+    setPageMeta(props.title, 'Страницата не постои или е преместена.');
   }, [props]);
 
   useEffect(() => {

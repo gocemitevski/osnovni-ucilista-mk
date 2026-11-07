@@ -1,37 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import SchoolItem from './SchoolItem';
 import NoResults from './NoResults';
-import { pageTitle, socialLinkButtons } from '../utils';
+import { pageDescription, setPageMeta, socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
+
+const returnFilteredData = (initialData, value) => {
+  return value && initialData.filter(el => el.some(item => item.toString().trim().toLowerCase().includes(value.trim().toLowerCase())));
+};
+
+const returnNamesData = (namesData, value) => {
+  return value && namesData.filter(item => item[3].trim().toLowerCase().includes(value.trim().toLowerCase()));
+};
+
+const getInitialSearchValue = () => {
+  if (typeof window === 'undefined' || !window.location) return '';
+  return new URLSearchParams(window.location.search).get('q') || '';
+};
 
 const Index = (props) => {
 
-  const initialSearchValue = '';
+  const initialSearchValue = getInitialSearchValue();
   const floatDecimals = 1;
 
   const { setSocialIconLinks, scroll } = props;
 
-  const [state, setState] = useState({
+  const [state, setState] = useState(() => ({
     initialData: [],
-    data: props.data,
+    data: initialSearchValue ? returnFilteredData(props.data, initialSearchValue) : props.data,
     search: initialSearchValue,
-    namesData: []
-  });
+    namesData: initialSearchValue ? returnNamesData(props.data, initialSearchValue) : []
+  }));
 
   const onSearch = (e) => {
     if (e.target.value) {
       setState({ ...state, data: returnFilteredData(props.data, e.target.value), search: e.target.value, namesData: returnNamesData(props.data, e.target.value) })
     } else {
-      setState({ ...state, data: props.data, search: initialSearchValue, namesData: [] })
+      setState({ ...state, data: props.data, search: '', namesData: [] })
     }
-  }
-
-  const returnFilteredData = (initialData, value) => {
-    return value && initialData.filter(el => el.some(item => item.toString().trim().toLowerCase().includes(value.trim().toLowerCase())));
-  }
-
-  const returnNamesData = (namesData, value) => {
-    return value && namesData.filter(item => item[3].trim().toLowerCase().includes(value.trim().toLowerCase()));
   }
 
   useEffect(() => {
@@ -39,14 +44,13 @@ const Index = (props) => {
   }, [scroll]);
 
   useEffect(() => {
-    document.title = pageTitle(props.title);
+    setPageMeta(props.title, pageDescription('адресарот на основните училишта'));
   }, [props]);
 
   useEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());
   }, [setSocialIconLinks]);
 
-  console.log(state.namesData.length)
   return (
     <div className="main-bg flex-fill">
       <main className="container py-5">
