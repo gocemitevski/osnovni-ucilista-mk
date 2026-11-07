@@ -138,7 +138,7 @@ function App() {
         <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} setSocialIconLinks={setSocialIconLinks} />} />
         <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />} />
       </Switch>
-      <nav className="navbar navbar-border-top flex-column flex-sm-row navbar-footer">
+      <nav aria-label="Информации и извори" className="navbar navbar-border-top flex-column flex-sm-row navbar-footer">
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">
           <span className="mr-2">Извор на основни податоци:</span>
           <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
