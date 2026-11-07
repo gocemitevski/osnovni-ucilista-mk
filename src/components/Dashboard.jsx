@@ -136,8 +136,8 @@ const Dashboard = (props) => {
   }
 
   return (
-    <main className="row no-gutters flex-fill main-bg main-bg-wrap">
-      <div className="col-lg-6 bg-info d-flex flex-column h-100">
+    <main id="main-content" tabIndex={-1} className="row no-gutters flex-fill main-bg main-bg-wrap">
+      <div className="col-lg-6 bg-info d-flex flex-column h-100" role={props.pageWidth > 767 ? 'region' : undefined} aria-label={props.pageWidth > 767 ? 'Карта на училиштата' : undefined}>
         {props.pageWidth > 767 && <Map scrollWheelZoom={false} bounds={mapPositions.length ? mapPositions : undefined} center={position} zoom={zoom} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

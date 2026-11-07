@@ -17,6 +17,7 @@ const NavBar = (props) => {
         {props.socialIconLinks.map((item, key) => <li className="nav-item" key={key}>
           <a className="nav-link text-light" target="_blank" rel="noopener noreferrer" href={item.href}>
             <FontAwesomeIcon fixedWidth className="my-2 my-lg-auto" icon={item.icon} title={`Сподели на „${item.title}“`} />
+            <span className="sr-only">{' (се отвора во нов прозорец)'}</span>
           </a>
         </li>)}
       </ul>}

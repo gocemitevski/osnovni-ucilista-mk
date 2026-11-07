@@ -53,8 +53,13 @@ const Index = (props) => {
 
   return (
     <div className="main-bg flex-fill">
-      <main className="container py-5">
+      <main id="main-content" tabIndex={-1} className="container py-5">
         <h1 className="sr-only">Адресар на основни училишта</h1>
+        <p className="sr-only" role="status" aria-live="polite">
+          {state.search && (state.data.length > 0
+            ? `Приказ на ${state.data.length} ${singularPlural(state.data.length, 'основно училиште', 'основни училишта')}`
+            : 'Нема резултати')}
+        </p>
         <div className="form-group mb-4">
           <label htmlFor="schoolSearch" className="sr-only">Барајте училиште</label>
           <input id="schoolSearch" placeholder="Барајте според име на училиште, адреса, град и сл." type="text" className="form-control form-control-lg" value={state.search} onChange={(e) => onSearch(e)}></input>

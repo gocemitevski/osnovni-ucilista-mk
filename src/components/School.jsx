@@ -99,7 +99,7 @@ const School = (props) => {
 
   return (
     <div className="main-bg page flex-fill">
-      <main className="container py-5">
+      <main id="main-content" tabIndex={-1} className="container py-5">
         <SchoolItemMap data={school} position={position} zoom={zoom} setSchool={setSchool} setPosition={setPosition} />
         {nearbySchools.length > 1 ?
           <div className="row justify-content-center">

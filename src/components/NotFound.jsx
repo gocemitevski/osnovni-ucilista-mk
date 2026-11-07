@@ -19,7 +19,7 @@ const NotFound = (props) => {
   }, [setSocialIconLinks]);
 
   return (
-    <main className="container flex-fill page py-5">
+    <main id="main-content" tabIndex={-1} className="container flex-fill page py-5">
       <header>
         <h1 className="h3 d-flex align-items-center">
           <FontAwesomeIcon className="text-danger mr-3" size="2x" icon={faTimesCircle} />

@@ -8,6 +8,7 @@ import About from './components/About';
 import Index from './components/Index';
 import School from './components/School';
 import NotFound from './components/NotFound';
+import RouteFocus from './components/RouteFocus';
 import CookieConsent from "react-cookie-consent";
 import { socialLinkButtons } from './utils';
 // import { cleanName, transliterate } from './utils';
@@ -131,6 +132,18 @@ function App() {
 
   return (
     <BrowserRouter basename="/osnovni-ucilista-mk">
+      <a
+        className="sr-only sr-only-focusable"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById('main-content');
+          if (main) main.focus();
+        }}
+      >
+        Прескокни до содржината
+      </a>
+      <RouteFocus />
       <NavBar routes={routes} data={data.records} socialIconLinks={socialIconLinks} />
       <Switch>
         {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
@@ -141,11 +154,11 @@ function App() {
       <nav aria-label="Информации и извори" className="navbar navbar-border-top flex-column flex-sm-row navbar-footer">
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">
           <span className="mr-2">Извор на основни податоци:</span>
-          <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk</a>
+          <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk<span className="sr-only">{' (се отвора во нов прозорец)'}</span></a>
         </div>
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-end">
           <span className="mr-2">Изработка на компјутерска презентација:</span>
-          <a target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски<span className="sr-only">{' (се отвора во нов прозорец)'}</span></a>
         </div>
       </nav>
       <CookieConsent
