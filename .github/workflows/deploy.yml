@@ -4,22 +4,28 @@ on:
   push:
     branches: [ master ]
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: Deploy to GitHub pages
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
 
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v1
+    - name: Use Node.js 24.x
+      uses: actions/setup-node@v7
       with:
-        node-version: 18.x
+        node-version: 24.x
+        cache: npm
 
     - name: install
-      run: npm install
+      run: npm ci
 
     - name: build sitemap
       run: npm run build:sitemap
