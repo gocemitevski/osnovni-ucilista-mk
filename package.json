@@ -20,32 +20,13 @@
     "react-router-dom": "^5.3.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "build:sitemap": "node ./src/buildSitemap.js > ./public/sitemap.xml",
-    "test": "react-scripts test",
-    "format": "prettier --write \"./**\"",
-    "dev": "vite"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "format": "prettier --write \"./**\""
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@vitejs/plugin-react": "^4.3.4",
     "prettier": "^3.9.10",
     "sass": "^1.108.1",
