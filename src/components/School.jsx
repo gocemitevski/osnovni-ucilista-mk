@@ -12,6 +12,17 @@ import SchoolItemNoDetails from './SchoolItemNoDetails';
 import MunicipalityLink from './MunicipalityLink';
 import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
+import NotFound from './NotFound';
+
+const findSchool = (data, schoolId) => {
+  if (!schoolId) return undefined;
+  const schoolResult = data.filter(el => el.some(item => cleanName(transliterate(item.toString() + ' ' + el[2].toString())).toLowerCase().includes(schoolId)));
+  return schoolResult[0];
+};
+
+const findNearbySchools = (data, school) => {
+  return school ? data.filter(el => el.some(item => item.toString().toLowerCase().includes(school[2].toLowerCase()))) : [];
+};
 
 const School = (props) => {
 
@@ -19,15 +30,9 @@ const School = (props) => {
 
   const { setSocialIconLinks, scroll } = props;
 
-  const [school, setSchool] = useState(() => {
-    const schoolResult = props.data.filter(el => el.some(item => cleanName(transliterate(item.toString() + ' ' + el[2].toString())).toLowerCase().includes(schoolId)));
-    return schoolResult[0];
-  });
+  const [school, setSchool] = useState(() => findSchool(props.data, schoolId));
 
-  const [nearbySchools, setNearbySchools] = useState(() => {
-    const nearbySchoolResults = props.data.filter(el => el.some(item => school && item.toString().toLowerCase().includes(school[2].toLowerCase())));
-    return nearbySchoolResults;
-  });
+  const [nearbySchools, setNearbySchools] = useState(() => findNearbySchools(props.data, school));
 
   const [position, setPosition] = useState(() => {
     return school && school[6] ? school[6] : null;
@@ -38,8 +43,20 @@ const School = (props) => {
   });
 
   useEffect(() => {
-    document.title = pageTitle(school[3]);
+    if (school) {
+      document.title = pageTitle(school[3]);
+    }
   }, [school]);
+
+  // Keep state in sync when the :schoolId route param changes
+  // (browser back/forward, direct URL edits). useState initializers only run on mount.
+  useEffect(() => {
+    const nextSchool = findSchool(props.data, schoolId);
+    setSchool(nextSchool);
+    setNearbySchools(findNearbySchools(props.data, nextSchool));
+    setPosition(nextSchool && nextSchool[6] ? nextSchool[6] : null);
+    setZoom(nextSchool && nextSchool[6] ? 17 : 9);
+  }, [schoolId, props.data]);
 
   useEffect(() => {
     setNearbySchools(nearbySchools);
@@ -68,6 +85,11 @@ const School = (props) => {
     iconUrl: iconUrl,
     shadowUrl: shadowUrl
   });
+
+  // Unknown school slug -> render the 404 page instead of crashing
+  if (!school) {
+    return <NotFound title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />;
+  }
 
   return (
     <div className="main-bg page flex-fill">

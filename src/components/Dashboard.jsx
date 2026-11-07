@@ -16,7 +16,14 @@ import Card from './Card';
 import CardHeader from './CardHeader';
 import { socialLinkButtons } from '../utils';
 import ReactGATrack from './ReactGATrack';
+import NotFound from './NotFound';
 import { faSortAmountUp, faSortAmountDown } from '@fortawesome/free-solid-svg-icons'
+
+const filterMunicipalitySchools = (data, municipalityId) => {
+  return municipalityId ? data.filter(el =>
+    (cleanName(transliterate(el[2].toString().toLowerCase())) === municipalityId) || (el[7] && cleanName(transliterate(el[7].toString().toLowerCase())) === municipalityId)
+  ) : data;
+};
 
 const Dashboard = (props) => {
 
@@ -25,9 +32,7 @@ const Dashboard = (props) => {
   const { setSocialIconLinks, scroll } = props;
 
   const [municipalitySchools, setMunicipalitySchools] = useState(() => {
-    return municipalityId ? props.data.filter(el =>
-      (cleanName(transliterate(el[2].toString().toLowerCase())) === municipalityId) || (el[7] && cleanName(transliterate(el[7].toString().toLowerCase())) === municipalityId)
-    ) : props.data;
+    return filterMunicipalitySchools(props.data, municipalityId);
   });
 
   const [position, setPosition] = useState(() => {
@@ -59,7 +64,13 @@ const Dashboard = (props) => {
   });
 
   useEffect(() => {
-    document.title = municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title);
+    if (!municipalityId) {
+      document.title = pageTitle(props.title);
+    } else if (municipalityId === 'grad-skopje') {
+      document.title = pageTitle(props.skopjeTitle);
+    } else if (municipalitySchools[0]) {
+      document.title = pageTitle(municipalitySchools[0][2]);
+    }
   }, [props, municipalitySchools, municipalityId]);
 
   useEffect(() => {
@@ -98,6 +109,19 @@ const Dashboard = (props) => {
     setSocialIconLinks(() => socialLinkButtons());
   }, [setSocialIconLinks]);
 
+  // Keep state in sync when the :municipalityId route param changes
+  // (browser back/forward, direct URL edits). useState initializers only run on mount.
+  useEffect(() => {
+    setMunicipalitySchools(filterMunicipalitySchools(props.data, municipalityId));
+    setSelectedMunicipality(municipalityId || 0);
+  }, [municipalityId, props.data]);
+
+  // Only feed valid marker positions to Leaflet; an empty/invalid bounds array throws
+  // "Bounds are not valid." inside fitBounds.
+  const mapPositions = municipalitySchools
+    .filter(school => Array.isArray(school[6]) && school[6].length >= 2)
+    .map(school => school[6]);
+
   delete L.Icon.Default.prototype._getIconUrl;
 
   L.Icon.Default.mergeOptions({
@@ -106,10 +130,15 @@ const Dashboard = (props) => {
     shadowUrl: shadowUrl
   });
 
+  // Unknown municipality slug -> render the 404 page instead of crashing
+  if (municipalityId && municipalitySchools.length === 0) {
+    return <NotFound title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />;
+  }
+
   return (
     <main className="row no-gutters flex-fill main-bg main-bg-wrap">
       <div className="col-lg-6 bg-info d-flex flex-column h-100">
-        {props.pageWidth > 767 && <Map scrollWheelZoom={false} bounds={[municipalitySchools.map((school, key) => { return school[6] })]} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
+        {props.pageWidth > 767 && <Map scrollWheelZoom={false} bounds={mapPositions.length ? mapPositions : undefined} center={position} zoom={zoom} boundsOptions={municipalityId ? { padding: [70, 70] } : {}}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -175,7 +204,7 @@ const Dashboard = (props) => {
         </div>
         {municipalitySchools.length === 1 && municipalitySchools.map((school, key) => <div className="m-3" key={key}><OneSchool {...props} className="card-one-school" data={school} /></div>)}
       </div>
-      <ReactGATrack location={props.location} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0][2]) : pageTitle(props.title)} />
+      <ReactGATrack location={props.location} title={municipalityId ? municipalityId === 'grad-skopje' ? pageTitle(props.skopjeTitle) : pageTitle(municipalitySchools[0] && municipalitySchools[0][2]) : pageTitle(props.title)} />
     </main>
   );
 }

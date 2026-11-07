@@ -14,7 +14,11 @@ const SelectMunicipality = (props) => {
           ));
           props.history.push('/opshtina/' + e.target.value + '/');
         }
-        else { props.history.push('') };
+        else {
+          props.setSelectedMunicipality(0);
+          props.setMunicipalitySchools && props.setMunicipalitySchools(props.data);
+          props.history.push('/');
+        };
       }}>
         <option value="">Сите општини во Р. С. Македонија</option>
         <option value="grad-skopje">{props.skopjeTitle}</option>
