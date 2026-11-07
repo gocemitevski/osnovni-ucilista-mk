@@ -35,28 +35,28 @@ const Dashboard = (props) => {
     return filterMunicipalitySchools(props.data, municipalityId);
   });
 
-  const [position, setPosition] = useState(() => {
+  const [position] = useState(() => {
     const lat = parseFloat(new URLSearchParams(document.location.search).get('lat'));
     const lon = parseFloat(new URLSearchParams(document.location.search).get('lon'));
     return (lat && lon) ? [lat, lon] : [41.6175, 21.7447];
   });
 
-  const [zoom, setZoom] = useState(() => {
+  const [zoom] = useState(() => {
     return position ? 18 : 9;
   });
 
   const [selectedMunicipality, setSelectedMunicipality] = useState(() => municipalityId || 0);
 
-  const [mostSchools, setMostSchools] = useState(() => props.municipalitiesSort);
+  const [mostSchools] = useState(() => props.municipalitiesSort);
 
-  const [singleSchoolMunicipalities, setSingleSchoolMunicipalities] = useState(() => {
+  const [singleSchoolMunicipalities] = useState(() => {
     const singleSchoolMunicipalitiesTotal = [];
     mostSchools.map(item => { return item[1] === 1 && singleSchoolMunicipalitiesTotal.push(item); });
 
     return singleSchoolMunicipalitiesTotal;
   });
 
-  const [tenUpSchoolMunicipalities, setTenUpSchoolMunicipalities] = useState(() => {
+  const [tenUpSchoolMunicipalities] = useState(() => {
     const tenUpSchoolMunicipalitiesTotal = [];
     mostSchools.map(item => { return item[1] > 10 && tenUpSchoolMunicipalitiesTotal.push(item) });
 
@@ -76,34 +76,6 @@ const Dashboard = (props) => {
   useEffect(() => {
     window.scrollTo(scroll);
   }, [scroll]);
-
-  useEffect(() => {
-    setPosition(position);
-  }, [position]);
-
-  useEffect(() => {
-    setZoom(zoom);
-  }, [zoom]);
-
-  useEffect(() => {
-    setMunicipalitySchools(municipalitySchools);
-  }, [municipalitySchools]);
-
-  useEffect(() => {
-    setSelectedMunicipality(selectedMunicipality);
-  }, [selectedMunicipality]);
-
-  useEffect(() => {
-    setMostSchools(mostSchools);
-  }, [mostSchools]);
-
-  useEffect(() => {
-    setSingleSchoolMunicipalities(singleSchoolMunicipalities);
-  }, [singleSchoolMunicipalities]);
-
-  useEffect(() => {
-    setTenUpSchoolMunicipalities(tenUpSchoolMunicipalities);
-  }, [tenUpSchoolMunicipalities]);
 
   useEffect(() => {
     setSocialIconLinks(() => socialLinkButtons());

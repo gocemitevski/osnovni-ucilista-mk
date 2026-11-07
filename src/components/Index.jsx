@@ -25,7 +25,6 @@ const Index = (props) => {
   const { setSocialIconLinks, scroll } = props;
 
   const [state, setState] = useState(() => ({
-    initialData: [],
     data: initialSearchValue ? returnFilteredData(props.data, initialSearchValue) : props.data,
     search: initialSearchValue,
     namesData: initialSearchValue ? returnNamesData(props.data, initialSearchValue) : []

@@ -15,11 +15,7 @@ import { socialLinkButtons } from './utils';
 
 function App() {
 
-  const [title, setTitle] = useState((value) => {
-    document.title = value;
-  });
-
-  const [scroll, setScroll] = useState({ top: 0, behavior: 'smooth' });
+  const [scroll] = useState({ top: 0, behavior: 'smooth' });
 
   const [pageWidth, setPageWidth] = useState(0);
 
@@ -50,17 +46,17 @@ function App() {
     return school[2];
   }));
 
-  const [skopjeSchoolsCount, setSkopjeSchoolsCount] = useState(() => {
+  const [skopjeSchoolsCount] = useState(() => {
     return data.records.filter(el => el[7] && el[7].toString().includes(skopjeTitle)).length;
   });
 
-  const [municipalitiesCount, setMunicipalitiesCount] = useState(() => {
+  const [municipalitiesCount] = useState(() => {
     const schoolsPerMunicipality = [];
     municipalities.forEach(i => { schoolsPerMunicipality[i] = (schoolsPerMunicipality[i] || 0) + 1; });
     return schoolsPerMunicipality;
   });
 
-  const [municipalitiesSort, setMunicipalitiesSort] = useState(() => {
+  const [municipalitiesSort] = useState(() => {
 
     const sortedMunicipalities = [];
 
@@ -86,11 +82,6 @@ function App() {
   const [socialIconLinks, setSocialIconLinks] = useState([]);
 
   useEffect(() => {
-    setTitle(process.env.REACT_APP_TITLE);
-  }, [title]);
-
-  useEffect(() => {
-    setScroll(scroll);
     window.scrollTo(scroll);
   }, [scroll]);
 
@@ -100,18 +91,6 @@ function App() {
       return municipalities;
     });
   }, [municipalities]);
-
-  useEffect(() => {
-    setMunicipalitiesCount(municipalitiesCount);
-  }, [municipalitiesCount]);
-
-  useEffect(() => {
-    setMunicipalitiesSort(municipalitiesSort);
-  }, [municipalitiesSort]);
-
-  useEffect(() => {
-    setSkopjeSchoolsCount(skopjeSchoolsCount);
-  }, [skopjeSchoolsCount]);
 
   useLayoutEffect(() => {
     function updateSize() {

@@ -5,7 +5,7 @@ import NoMap from './NoMap';
 
 const SchoolItemMap = (props) => {
 
-  const emails = props.data[5].split(/[\s|,|;]/);
+  const emails = (props.data[5] || '').split(/[\s,;|]+/).filter(Boolean);
   const { position } = props;
 
   return (

@@ -65,18 +65,6 @@ const School = (props) => {
   }, [schoolId, props.data]);
 
   useEffect(() => {
-    setNearbySchools(nearbySchools);
-  }, [nearbySchools]);
-
-  useEffect(() => {
-    setPosition(position);
-  }, [position]);
-
-  useEffect(() => {
-    setZoom(zoom);
-  }, [zoom]);
-
-  useEffect(() => {
     window.scrollTo(scroll);
   }, [scroll]);
 

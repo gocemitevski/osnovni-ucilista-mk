@@ -4,7 +4,7 @@ import Mail from './Mail';
 
 const SchoolItem = (props) => {
 
-  const emails = props.data[5].split(/[\s|,|;]/);
+  const emails = (props.data[5] || '').split(/[\s,;|]+/).filter(Boolean);
 
   return (
     <article className="card school" key={props.index}>
