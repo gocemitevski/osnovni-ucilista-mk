@@ -92,7 +92,7 @@ const School = (props) => {
         {nearbySchools.length > 1 ?
           <div className="row justify-content-center">
             <div className="col-xl-8">
-              <h2 className="mt-5 mb-4 text-center">Други училишта во <MunicipalityLink municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink municipality={school[7]} />}
+              <h2 className="h4 mt-5 mb-4 text-center">Други училишта во <MunicipalityLink municipality={school[2]} />{school[7] && `, `}{school[7] && <MunicipalityLink municipality={school[7]} />}
               </h2>
               <ul className="list-group">
                 {nearbySchools.map((nearSchool, index) => school !== nearSchool && <li key={index} className="list-group-item"><SchoolItemNoDetails {...props} key={index} scroll={scroll} data={nearSchool} setSchool={setSchool} setPosition={setPosition} /></li>)}
