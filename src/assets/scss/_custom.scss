@@ -202,29 +202,6 @@ p a,
 
 .page {
   min-height: calc(100vh - 125px);
-
-  // Bootstrap 5 extends the .h1/.h2/.h3 classes onto plain h1/h2/h3 selectors.
-  // The :not() guards keep those generated class variants from letting a
-  // differently-tagged heading (for example <h1 class="h2">) match another
-  // heading's rule, which is how Bootstrap 4 behaved.
-  h1:not(.h1) {
-    font-size: $h3-font-size;
-  }
-
-  h2:not(.h2) {
-    margin-top: $spacer*2;
-    font-size: $h4-font-size;
-  }
-
-  h3:not(.h3) {
-    font-size: $h5-font-size;
-  }
-
-  h1:not(.h1),
-  h2:not(.h2),
-  h3:not(.h3) {
-    margin-bottom: $spacer*1.5;
-  }
 }
 
 .card-one-school {
