@@ -9,7 +9,7 @@ const SelectMunicipality = (props) => {
   return (
     <React.Fragment>
       <label htmlFor="setMunicipality" className="visually-hidden">Општина</label>
-      <select defaultValue={municipalityId} className="form-select" id="setMunicipality" onChange={(e) => {
+      <select value={municipalityId || ''} className="form-select" id="setMunicipality" onChange={(e) => {
         if (e.target.value) {
           props.setSelectedMunicipality(e.target.value);
           props.setMunicipalitySchools && props.setMunicipalitySchools(props.data.filter(el =>
