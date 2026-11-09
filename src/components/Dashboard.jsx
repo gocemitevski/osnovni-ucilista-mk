@@ -128,6 +128,13 @@ const Dashboard = (props) => {
     return <NotFound title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />;
   }
 
+  const municipalityName = municipalityId
+    ? (municipalityId === 'grad-skopje' ? props.skopjeTitle : municipalitySchools[0] && municipalitySchools[0][2])
+    : '';
+  const pageHeading = municipalityName
+    ? `Основни училишта во ${municipalityName}`
+    : 'Основни училишта во Р. С. Македонија';
+
   return (
     <main id="main-content" tabIndex={-1} className="row g-0 flex-fill main-bg main-bg-wrap">
       <div className="col-lg-6 bg-info d-flex flex-column h-100" role={props.pageWidth > 767 ? 'region' : undefined} aria-label={props.pageWidth > 767 ? 'Карта на училиштата' : undefined}>
@@ -139,13 +146,13 @@ const Dashboard = (props) => {
           />
           {municipalitySchools.map((school, key) => {
             return (
-              school[6] && <SchoolMapMarker {...props} key={key} position={school[6]} data={school} />
+              school[6] && <SchoolMapMarker {...props} key={key} position={school[6]} data={school} keyboard={false} />
             )
           })}
         </MapContainer>}
       </div>
       <div className="col-lg-6 d-flex flex-column h-100">
-        <h1 className="visually-hidden">Основни училишта</h1>
+        <h1 className="visually-hidden">{pageHeading}</h1>
         <div className="bg-neutral p-3">
           <div className="row g-0">
             <div className={municipalityId ? `col-lg-6` : `col-lg-12`}>

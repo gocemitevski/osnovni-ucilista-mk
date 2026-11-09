@@ -5,7 +5,10 @@ import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 const NoMap = (props) => {
 
   return (
-    <FontAwesomeIcon className="text-muted" size="4x" icon={faMapMarkedAlt} />
+    <React.Fragment>
+      <FontAwesomeIcon className="text-muted" size="4x" icon={faMapMarkedAlt} />
+      <span className="visually-hidden">Нема достапна карта за ова училиште.</span>
+    </React.Fragment>
   );
 }
 

@@ -29,7 +29,9 @@
 main {
   .leaflet-container {
     a {
-      color: $primary;
+      // Leaflet's attribution sits on a light background; use the accessible
+      // link colour rather than the darker $primary, which falls below AA.
+      color: $link-color;
     }
   }
 }
@@ -191,6 +193,13 @@ ul {
   }
 }
 
+// Inline links inside body copy need a non-colour cue so they are still
+// distinguishable when colour vision is limited (WCAG 1.4.1).
+p a,
+.page h2 a {
+  text-decoration: underline;
+}
+
 .page {
   min-height: calc(100vh - 125px);
 
@@ -222,6 +231,7 @@ ul {
   .card-body {
     a {
       color: inherit;
+      text-decoration: underline;
     }
   }
 }

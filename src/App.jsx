@@ -22,7 +22,10 @@ const RouteElement = ({ component: Component, ...props }) => {
 
 function App() {
 
-  const [scroll] = useState({ top: 0, behavior: 'smooth' });
+  const [scroll] = useState(() => ({
+    top: 0,
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+  }));
 
   const [pageWidth, setPageWidth] = useState(0);
 
@@ -150,6 +153,9 @@ function App() {
         enableDeclineButton={true}
         declineButtonText="Не, благодарам"
         cookieName="osnovniUcilistaMK"
+        ariaAcceptLabel="Во ред"
+        ariaDeclineLabel="Не, благодарам"
+        customContainerAttributes={{ role: 'region', 'aria-label': 'Известување за употреба на колачиња' }}
         containerClasses="fixed-bottom bg-dark text-light d-flex flex-wrap justify-content-between align-content-center p-3"
         contentClasses="d-inline-flex my-auto py-2"
         buttonClasses="btn btn-light"

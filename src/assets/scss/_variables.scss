@@ -1,14 +1,15 @@
 // Color system
 //
 // Bootstrap 5 changed the default green and cyan values. Keep the Bootstrap 4
-// values so success/info elements look the same after the migration.
+// hues, but darken success/info/warning/alert slightly so the white labels
+// used on badges, buttons and metric pills reach WCAG AA (4.5:1).
 
-$green:   #28a745;
-$cyan:    #17a2b8;
+$green:   #1e7e34;
+$cyan:    #117a8b;
 
 $blue:    #1678ca;
-$orange:  #ff5400;
-$yellow:  #c18802;
+$orange:  #b35c00;
+$yellow:  #a06a02;
 
 $colors: (
   "blue":       $blue
@@ -41,23 +42,22 @@ $theme-colors: (
 );
 
 // Bootstrap 4 picked button text colour with the YIQ heuristic, which gives
-// white text on the success/info/warning palette. Bootstrap 5's WCAG-based
-// contrast calculation defaults to black on some of these. Lower the required
-// ratio so the solid buttons keep their white labels, and use Bootstrap 4's
-// dark text colour for light backgrounds.
-$min-contrast-ratio:          2.5;
+// white text on the success/info/warning palette. The palette above is dark
+// enough for white labels to pass WCAG AA, so keep the standard ratio and use
+// Bootstrap 4's dark text colour for light backgrounds.
+$min-contrast-ratio:          4.5;
 $color-contrast-dark:         $gray-900;
 
 
 // Links
 //
 // Bootstrap 5 derives the link colors from the core palette before the
-// overrides above are applied, and underlines links by default. Restore the
-// Bootstrap 4 values (the site was previously using Bootstrap's default blue
-// for links, not the custom $primary).
+// overrides above are applied, and underlines links by default. Use a darker
+// blue than Bootstrap 4's #007bff so link text reaches WCAG AA on both white
+// and the $gray-200 page background.
 
-$link-color:                    #007bff;
-$link-hover-color:              #0056b3;
+$link-color:                    #0062cc;
+$link-hover-color:              #004085;
 $link-decoration:               none;
 $link-hover-decoration:         underline;
 
