@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import L from 'leaflet';
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
@@ -31,11 +31,17 @@ const MapBounds = ({ bounds, boundsOptions, center, zoom }) => {
   const map = useMap();
   const boundsOptionsKey = JSON.stringify(boundsOptions);
 
-  useEffect(() => {
+  // Update before paint (like react-leaflet's old componentDidUpdate) and skip
+  // Leaflet's zoom animation: fitBounds() is ignored while another zoom
+  // animation is still running, which made a quick route change keep the
+  // previous view instead of fitting the new bounds.
+  useLayoutEffect(() => {
+    const options = { ...boundsOptions, animate: false };
+
     if (bounds.length > 0) {
-      map.fitBounds(bounds, boundsOptions);
+      map.fitBounds(bounds, options);
     } else {
-      map.setView(center, zoom);
+      map.setView(center, zoom, options);
     }
     // boundsOptions is represented by boundsOptionsKey.
     // eslint-disable-next-line react-hooks/exhaustive-deps
