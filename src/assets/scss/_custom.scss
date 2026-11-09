@@ -1,3 +1,9 @@
+:root {
+  // Bootstrap 5 uses a translucent body color for muted text; the site used
+  // the explicit Bootstrap 4 $text-muted value.
+  --bs-secondary-color: #{$text-muted};
+}
+
 #root {
   @extend .d-flex;
   @extend .flex-column;
@@ -151,8 +157,33 @@ main {
   margin-bottom: $spacer;
 }
 
+.card-body {
+  // Bootstrap 4.6 used the horizontal card spacer on every side of the body.
+  padding: $card-spacer-x;
+}
+
+.badge.rounded-pill {
+  // Bootstrap 4's .badge-pill class also widened the horizontal padding.
+  padding-right: .6em;
+  padding-left: .6em;
+}
+
+.form-text {
+  // Bootstrap 4 rendered form help text as a block; Bootstrap 5 made it inline.
+  display: block;
+}
+
+ol,
+ul {
+  // Bootstrap 5 reduced list indentation from the browser default 40px to 32px.
+  padding-left: 2.5rem;
+}
+
 .btn-truncate {
   @extend .text-truncate;
+  // The deployed Bootstrap 4 build rendered these mail links without the base
+  // .btn class, so they had no border. Keep that exact geometry.
+  border: 0;
   padding: $spacer/2 $spacer*0.75;
 
   span {
@@ -163,22 +194,26 @@ main {
 .page {
   min-height: calc(100vh - 125px);
 
-  h1 {
+  // Bootstrap 5 extends the .h1/.h2/.h3 classes onto plain h1/h2/h3 selectors.
+  // The :not() guards keep those generated class variants from letting a
+  // differently-tagged heading (for example <h1 class="h2">) match another
+  // heading's rule, which is how Bootstrap 4 behaved.
+  h1:not(.h1) {
     font-size: $h3-font-size;
   }
 
-  h2 {
+  h2:not(.h2) {
     margin-top: $spacer*2;
     font-size: $h4-font-size;
   }
 
-  h3 {
+  h3:not(.h3) {
     font-size: $h5-font-size;
   }
 
-  h1,
-  h2,
-  h3 {
+  h1:not(.h1),
+  h2:not(.h2),
+  h3:not(.h3) {
     margin-bottom: $spacer*1.5;
   }
 }

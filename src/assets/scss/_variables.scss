@@ -1,4 +1,10 @@
 // Color system
+//
+// Bootstrap 5 changed the default green and cyan values. Keep the Bootstrap 4
+// values so success/info elements look the same after the migration.
+
+$green:   #28a745;
+$cyan:    #17a2b8;
 
 $blue:    #1678ca;
 $orange:  #ff5400;
@@ -34,12 +40,34 @@ $theme-colors: (
   "alert":      $alert
 );
 
+// Bootstrap 4 picked button text colour with the YIQ heuristic, which gives
+// white text on the success/info/warning palette. Bootstrap 5's WCAG-based
+// contrast calculation defaults to black on some of these. Lower the required
+// ratio so the solid buttons keep their white labels, and use Bootstrap 4's
+// dark text colour for light backgrounds.
+$min-contrast-ratio:          2.5;
+$color-contrast-dark:         $gray-900;
+
+
+// Links
+//
+// Bootstrap 5 derives the link colors from the core palette before the
+// overrides above are applied, and underlines links by default. Restore the
+// Bootstrap 4 values (the site was previously using Bootstrap's default blue
+// for links, not the custom $primary).
+
+$link-color:                    #007bff;
+$link-hover-color:              #0056b3;
+$link-decoration:               none;
+$link-hover-decoration:         underline;
+
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-responsive-font-sizes:                true;
+$enable-rfs:                                 true;
+$enable-smooth-scroll:                       false;
 
 
 // Grid breakpoints
@@ -56,6 +84,29 @@ $grid-breakpoints: (
   xl: 1200px
 );
 
+// Bootstrap 5 defaults to a 24px gutter and adds an xxl container. Keep the
+// Bootstrap 4 grid metrics (30px gutter, 1140px max width).
+$grid-gutter-width:           30px;
+$container-padding-x:         30px;
+$navbar-padding-x:            $spacer;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+
+// Borders
+//
+// Bootstrap 5 increased the default corner radii; restore the Bootstrap 4
+// values so cards, inputs, buttons and badges keep the same shape.
+
+$border-radius:               .25rem;
+$border-radius-sm:            .2rem;
+$border-radius-lg:            .3rem;
+
 
 // Typography
 //
@@ -65,13 +116,12 @@ $font-family-base:            "Montserrat", -apple-system, BlinkMacSystemFont, "
 
 $h1-font-size:                $font-size-base * 3;
 
-$display2-size:               5rem;
-$display3-size:               3.5rem;
-$display4-size:               2.5rem;
-
-$display4-weight:             500;
-
 $text-muted:                  darken($gray-600, 5%);
+
+// The original app did not import Bootstrap's code styles, so code elements
+// kept their browser defaults. Neutralise Bootstrap 5's reboot additions.
+$code-font-size:              1em;
+$code-color:                  inherit;
 
 
 // Navs
@@ -100,4 +150,57 @@ $dropdown-link-disabled-color:      $gray-600;
 
 // Cards
 
+$card-spacer-y:                     .75rem;
+$card-spacer-x:                     1.25rem;
+$card-cap-padding-y:                .75rem;
+$card-cap-padding-x:                1.25rem;
+$card-border-color:                 rgba($black, .125);
 $card-cap-bg:                       $gray-100;
+
+
+// Forms
+
+$input-color:                       $gray-700;
+$input-focus-color:                 $gray-700;
+$input-border-color:                $gray-400;
+$input-placeholder-color:           $gray-600;
+$input-box-shadow:                  inset 0 1px 1px rgba($black, .075);
+$input-focus-border-color:          #80bdff;
+$input-focus-box-shadow:            0 0 0 .2rem rgba(#007bff, .25);
+
+$form-select-color:                 $gray-700;
+$form-select-border-color:          $gray-400;
+$form-select-box-shadow:            inset 0 1px 1px rgba($black, .075);
+$form-select-focus-border-color:    #80bdff;
+$form-select-focus-box-shadow:      0 0 0 .2rem rgba(#007bff, .25);
+$form-select-indicator-padding:     1.75rem;
+$form-select-bg-size:               8px 10px;
+$form-select-indicator:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$gray-800}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+
+
+// Buttons
+
+$input-btn-focus-width:             .2rem;
+$input-btn-focus-color:             rgba(#007bff, .25);
+$input-btn-focus-box-shadow:        0 0 0 .2rem rgba(#007bff, .25);
+$btn-focus-box-shadow:              0 0 0 .2rem rgba(#007bff, .25);
+$btn-hover-bg-shade-amount:         7.5%;
+$btn-hover-border-shade-amount:     10%;
+$btn-active-bg-shade-amount:        10%;
+$btn-active-border-shade-amount:    12.5%;
+
+
+// Badges
+
+$badge-padding-y:                   .25em;
+$badge-padding-x:                   .4em;
+
+
+// List group
+
+$list-group-item-padding-y:         .75rem;
+$list-group-item-padding-x:         1.25rem;
+$list-group-border-color:           rgba($black, .125);
+$list-group-action-color:           $gray-700;
+$list-group-action-hover-color:     $gray-700;
+$list-group-action-active-bg:       $gray-200;

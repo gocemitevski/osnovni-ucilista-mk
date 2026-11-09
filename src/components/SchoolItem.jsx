@@ -8,7 +8,7 @@ const SchoolItem = (props) => {
 
   return (
     <article className="card school" key={props.index}>
-      <div className="row no-gutters">
+      <div className="row g-0">
         <div className="col-lg-6 p-4 d-flex">
           <h2 className="h5 mb-0 flex-fill">
             <SchoolItemLink {...props} data={props.data} />

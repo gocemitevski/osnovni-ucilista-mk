@@ -10,13 +10,13 @@ const SchoolItemMap = (props) => {
 
   return (
     <article className="card mb-3" id={props.index} key={props.index}>
-      <div className="row no-gutters">
+      <div className="row g-0">
         <div style={{ minHeight: 400 }} className="col-lg-6 border-0 card-header p-0 d-flex flex-column align-items-center justify-content-center" role={position ? 'region' : undefined} aria-label={position ? 'Карта на училиштето' : undefined}>
           {position ? <SchoolMap {...props} style={{ minHeight: 'inherit' }} scrollWheelZoom={false} position={position} zoom={props.zoom} /> : <NoMap />}
         </div>
         <div className="col-lg-6">
           <div className="card-body p-5 d-flex flex-column h-100">
-            <h1 className="h2 mb-3 font-weight-bold card-title">{props.data[3]}</h1>
+            <h1 className="h2 mb-3 fw-bold card-title">{props.data[3]}</h1>
             <dl className="mb-0">
               <dt>Адреса:</dt>
               <dd><address className="mb-0">{props.data[4]}<br />{props.data[2]}</address></dd>

@@ -22,7 +22,7 @@ const NotFound = (props) => {
     <main id="main-content" tabIndex={-1} className="container flex-fill page py-5">
       <header>
         <h1 className="h3 d-flex align-items-center">
-          <FontAwesomeIcon className="text-danger mr-3" size="2x" icon={faTimesCircle} />
+          <FontAwesomeIcon className="text-danger me-3" size="2x" icon={faTimesCircle} />
           <span>{props.title}</span>
         </h1>
         <p>Извинете, но страницата <code>{location.pathname}</code> не постои или пак можеби некогаш постоела и била избришана.</p>

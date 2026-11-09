@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import './App.scss';
 import data from './data/data.json';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
@@ -12,6 +12,13 @@ import RouteFocus from './components/RouteFocus';
 import CookieConsent from "react-cookie-consent";
 import { socialLinkButtons } from './utils';
 // import { cleanName, transliterate } from './utils';
+
+// Route elements no longer receive route props in v6+, so inject `location`
+// explicitly for components that track page views.
+const RouteElement = ({ component: Component, ...props }) => {
+  const location = useLocation();
+  return <Component {...props} location={location} />;
+};
 
 function App() {
 
@@ -25,20 +32,17 @@ function App() {
     {
       "path": "/",
       "title": "Почетна",
-      "component": Dashboard,
-      "exact": true
+      "component": Dashboard
     },
     {
       "path": "/adresar",
       "title": "Адресар",
-      "component": Index,
-      "exact": false
+      "component": Index
     },
     {
       "path": "/za-izrabotkata",
       "title": "За изработката",
-      "component": About,
-      "exact": false
+      "component": About
     }
   ];
 
@@ -112,7 +116,7 @@ function App() {
   return (
     <BrowserRouter basename="/osnovni-ucilista-mk">
       <a
-        className="sr-only sr-only-focusable"
+        className="visually-hidden visually-hidden-focusable"
         href="#main-content"
         onClick={(event) => {
           event.preventDefault();
@@ -124,20 +128,20 @@ function App() {
       </a>
       <RouteFocus />
       <NavBar routes={routes} data={data.records} socialIconLinks={socialIconLinks} />
-      <Switch>
-        {routes.map((item, key) => <Route key={key} exact={item.exact} path={item.path} render={(props) => <item.component {...props} scroll={scroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
-        <Route exact path={`/uchilishte/:schoolId`} render={(props) => <School {...props} scroll={scroll} data={data.records} skopjeTitle={skopjeTitle} setSocialIconLinks={setSocialIconLinks} />} />
-        <Route exact path={`/opshtina/:municipalityId`} render={(props) => <Dashboard {...props} scroll={scroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} setSocialIconLinks={setSocialIconLinks} />} />
-        <Route path="*" render={props => <NotFound {...props} title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />} />
-      </Switch>
+      <Routes>
+        {routes.map((item, key) => <Route key={key} path={item.path} element={<RouteElement component={item.component} scroll={scroll} title={item.title} data={data.records} municipalitiesSort={municipalitiesSort} pageWidth={pageWidth} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} setSocialIconLinks={setSocialIconLinks} />} />)}
+        <Route path={`/uchilishte/:schoolId`} element={<RouteElement component={School} scroll={scroll} data={data.records} skopjeTitle={skopjeTitle} setSocialIconLinks={setSocialIconLinks} />} />
+        <Route path={`/opshtina/:municipalityId`} element={<RouteElement component={Dashboard} scroll={scroll} data={data.records} municipalitiesSort={municipalitiesSort} skopjeTitle={skopjeTitle} skopjeSchoolsCount={skopjeSchoolsCount} pageWidth={pageWidth} setSocialIconLinks={setSocialIconLinks} />} />
+        <Route path="*" element={<RouteElement component={NotFound} title="Грешка 404" setSocialIconLinks={setSocialIconLinks} />} />
+      </Routes>
       <nav aria-label="Информации и извори" className="navbar navbar-border-top flex-column flex-sm-row navbar-footer">
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-start mb-2 mb-md-0">
-          <span className="mr-2">Извор на основни податоци:</span>
-          <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk<span className="sr-only">{' (се отвора во нов прозорец)'}</span></a>
+          <span className="me-2">Извор на основни податоци:</span>
+          <a target="_blank" rel="noopener noreferrer" href="http://data.gov.mk/mk/dataset/pernctap-ha-ochobhn-yhnjinwta">data.gov.mk<span className="visually-hidden">{' (се отвора во нов прозорец)'}</span></a>
         </div>
         <div className="d-flex flex-wrap align-items-center flex-fill justify-content-center justify-content-lg-end">
-          <span className="mr-2">Изработка на компјутерска презентација:</span>
-          <a target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски<span className="sr-only">{' (се отвора во нов прозорец)'}</span></a>
+          <span className="me-2">Изработка на компјутерска презентација:</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://gocemitevski.com/">Гоце Митевски<span className="visually-hidden">{' (се отвора во нов прозорец)'}</span></a>
         </div>
       </nav>
       <CookieConsent
@@ -149,7 +153,7 @@ function App() {
         containerClasses="fixed-bottom bg-dark text-light d-flex flex-wrap justify-content-between align-content-center p-3"
         contentClasses="d-inline-flex my-auto py-2"
         buttonClasses="btn btn-light"
-        declineButtonClasses="btn btn-outline-light ml-2"
+        declineButtonClasses="btn btn-outline-light ms-2"
         disableStyles={true}
         flipButtons={true}>
         Ова мрежно место користи т.н. колачиња за подобрување на корисничкото искуство. Изберете „Во ред“ или „Не, благодарам“ за да го скриете ова предупредување.

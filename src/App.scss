@@ -1,21 +1,26 @@
 /*!
- * Bootstrap v4.6.0 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
+ * Bootstrap v5.3.8 (https://getbootstrap.com/)
+ * Copyright 2011-2026 The Bootstrap Authors
+ * Copyright 2011-2026 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
  @import "~bootstrap/scss/functions";
  @import "~bootstrap/scss/variables";
- @import "~bootstrap/scss/mixins";
+ @import "~bootstrap/scss/variables-dark";
 
  // Custom Bootstrap overrides
  @import "./assets/scss/variables";
+
+ @import "~bootstrap/scss/maps";
+ @import "~bootstrap/scss/mixins";
+ @import "~bootstrap/scss/utilities";
 
  @import "~bootstrap/scss/root";
  @import "~bootstrap/scss/reboot";
  @import "~bootstrap/scss/type";
  @import "~bootstrap/scss/images";
+ @import "~bootstrap/scss/containers";
 //  @import "~bootstrap/scss/code";
  @import "~bootstrap/scss/grid";
 //  @import "~bootstrap/scss/tables";
@@ -25,7 +30,6 @@
 //  @import "~bootstrap/scss/dropdown";
 //  @import "~bootstrap/scss/button-group";
 //  @import "~bootstrap/scss/input-group";
- @import "~bootstrap/scss/custom-forms";
  @import "~bootstrap/scss/nav";
  @import "~bootstrap/scss/navbar";
  @import "~bootstrap/scss/card";
@@ -44,8 +48,9 @@
 //  @import "~bootstrap/scss/popover";
 //  @import "~bootstrap/scss/carousel";
 //  @import "~bootstrap/scss/spinners";
- @import "~bootstrap/scss/utilities";
- @import "~bootstrap/scss/print";
+ @import "~bootstrap/scss/helpers";
+ @import "~bootstrap/scss/utilities/api";
+//  @import "~bootstrap/scss/print";
 
 /*
 * Custom styles

@@ -6,9 +6,9 @@ const NoResults = (props) => {
 
   return (
     <article className="card my-4" key={props.index}>
-      <div className="row no-gutters">
+      <div className="row g-0">
         <div className="col-lg-4 border-0 card-header px-3 py-5 d-flex align-items-center justify-content-lg-center">
-          <FontAwesomeIcon fixedWidth className="text-muted mr-2" size="4x" icon={faFrown} />
+          <FontAwesomeIcon fixedWidth className="text-muted me-2" size="4x" icon={faFrown} />
         </div>
         <div className="col-lg-8">
           <div className="card-body">
