@@ -16,7 +16,7 @@ const NavBar = (props) => {
       {props.socialIconLinks.length > 0 && <ul className="nav ms-lg-3 order-2 order-lg-0">
         {props.socialIconLinks.map((item, key) => <li className="nav-item" key={key}>
           <a className="nav-link text-light" target="_blank" rel="noopener noreferrer" href={item.href} aria-label={`Сподели на „${item.title}“ (се отвора во нов прозорец)`}>
-            <FontAwesomeIcon fixedWidth className="my-2 my-lg-auto" icon={item.icon} />
+            <FontAwesomeIcon className="my-2 my-lg-auto" icon={item.icon} />
           </a>
         </li>)}
       </ul>}
