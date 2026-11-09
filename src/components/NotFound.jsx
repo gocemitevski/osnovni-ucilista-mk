@@ -21,7 +21,7 @@ const NotFound = (props) => {
   return (
     <main id="main-content" tabIndex={-1} className="container flex-fill page py-5">
       <header>
-        <h1 className="h3 d-flex align-items-center">
+        <h1 className="h3 mb-4 d-flex align-items-center">
           <FontAwesomeIcon className="text-danger me-3" size="2x" icon={faTimesCircle} />
           <span>{props.title}</span>
         </h1>
